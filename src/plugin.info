@@ -1,7 +1,7 @@
 {
-  "title": "$:/plugins/linonetwo/tw-example-plugin",
+  "title": "$:/plugins/linonetwo/super-tag",
   "author": "LinOnetwo",
-  "description": "put your description here, and fill in the author and title above",
+  "description": "Auto generate input form on a tiddler by simply adding a SuperTag to it. Create a SuperTag by compositing existing TraitTags.",
   "core-version": ">=5.1.22",
   "plugin-type": "plugin",
   "version": "0.0.1",
