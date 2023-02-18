@@ -1,0 +1,17 @@
+title: $:/plugins/linonetwo/super-tag/UnderTiddler
+tags: $:/tags/ViewTemplate
+
+<$let thisCurrentTiddler=<<currentTiddler>> > 
+  <!--
+    Filter to find if current tiddler added a SuperTag
+    all[current] - tiddler
+    tags[] - SuperTag and other tags
+    tags[] - TraitTag and other tags
+    tags[] - $:/SuperTag/TraitTag and other tags
+  -->
+  <$list filter="[all[current]tags[]tags[]tags[]match[$:/SuperTag/TraitTag]then<thisCurrentTiddler>]">
+
+    <$supertag-form />
+
+  </$list>
+</$let>
