@@ -1,0 +1,13 @@
+[
+    {
+        "created": "20230218125724151",
+        "text": "Add a counter button.",
+        "title": "$:/TraitTag/Count",
+        "modified": "20230218125906101",
+        "tags": "$:/SuperTag/TraitTag",
+        "type": "text/vnd.tiddlywiki",
+        "wl-field-name-text": "uiSchema",
+        "schema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"count\": {\n      \"type\": \"number\"\n    }\n  }\n}",
+        "uiSchema": "{\n  \"type\": \"VerticalLayout\",\n  \"elements\": [\n    {\n      \"type\": \"Control\",\n      \"scope\": \"#/properties/number\"\n    }\n  ]\n}"
+    }
+]
