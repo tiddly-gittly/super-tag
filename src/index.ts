@@ -1,6 +1,5 @@
-import type { Widget as IWidget, IChangedTiddlers } from 'tiddlywiki';
-
-const Widget = (require('$:/core/modules/widgets/widget.js') as { widget: typeof IWidget }).widget;
+import type { IChangedTiddlers } from 'tiddlywiki';
+import { widget as Widget } from '$:/core/modules/widgets/widget.js';
 
 class ExampleWidget extends Widget {
   // constructor(parseTreeNode: IParseTreeNode, options?: unknown) {

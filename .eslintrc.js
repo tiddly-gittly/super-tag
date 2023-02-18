@@ -15,6 +15,9 @@ module.exports = {
     react: {
       version: '17.0.2',
     },
+    'import/parsers': {
+      '@typescript-eslint/parser': ['.ts', '.tsx'],
+    },
     'import/resolver': {
       node: {
         extensions: ['.js', '.jsx', '.ts', '.tsx', '.mjs'],
@@ -32,6 +35,7 @@ module.exports = {
     },
   },
   rules: {
+    'import/no-unresolved': [2, { ignore: ['\\$:/'] }],
     // 'no-use-before-define': ['error', { ignoreTypeReferences: true, functions: false }],
     'unicorn/prevent-abbreviations': [
       'error',
