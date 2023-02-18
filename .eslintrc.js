@@ -53,6 +53,8 @@ module.exports = {
       },
     ],
     'unicorn/prefer-node-protocol': 'off',
+    'unicorn/no-useless-undefined': 'off',
+    '@typescript-eslint/consistent-type-assertions': 'off',
     'unicorn/prefer-module': 'off',
     '@typescript-eslint/no-empty-function': 'off',
     '@typescript-eslint/method-signature-style': 'off',

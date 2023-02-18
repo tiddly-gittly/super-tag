@@ -1,5 +1,6 @@
 import type { IChangedTiddlers } from 'tiddlywiki';
 import { widget as Widget } from '$:/core/modules/widgets/widget.js';
+import { getTraits } from '../utils/getTraits';
 
 class SupertagFormWidget extends Widget {
   // constructor(parseTreeNode: IParseTreeNode, options?: unknown) {
@@ -17,6 +18,11 @@ class SupertagFormWidget extends Widget {
     this.parentDomNode = parent;
     this.computeAttributes();
     this.execute();
+
+    const currentTiddlerTitle = this.getVariable('currentTiddler');
+    const traits = getTraits(currentTiddlerTitle);
+    // DEBUG: console traits
+    console.log(`traits`, traits);
 
     const containerElement = document.createElement('div');
     containerElement.textContent = 'Hello world!';
