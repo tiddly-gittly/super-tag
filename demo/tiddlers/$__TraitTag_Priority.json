@@ -1,0 +1,15 @@
+[
+    {
+        "created": "20230218103343254",
+        "creator": "林一二",
+        "text": "About an action's priority. Using Px to descript, where P0 is the highest priority.",
+        "title": "$:/TraitTag/Priority",
+        "modified": "20230218103614197",
+        "modifier": "林一二",
+        "tags": "$:/SuperTag/TraitTag",
+        "type": "text/vnd.tiddlywiki",
+        "wl-field-name-text": "text",
+        "uiSchema": "{\n  \"type\": \"VerticalLayout\",\n  \"elements\": [\n    {\n      \"type\": \"Control\",\n      \"scope\": \"#/properties/priority\"\n    }\n  ]\n}",
+        "schema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"priority\": {\n      \"type\": \"string\",\n      \"enum\": [\n        \"P0\",\n        \"P1\",\n        \"P2\",\n        \"P3\",\n        \"P4\",\n        \"P5\"\n      ]\n    }\n  }\n}"
+    }
+]

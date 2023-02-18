@@ -1,0 +1,11 @@
+created: 20230218102359946
+creator: 林一二
+description: a [[JSON Schema|https://json-schema.org/]] that describe what data a form will receive.
+icon: {{$:/core/images/spiral}}
+modified: 20230218102447849
+modifier: 林一二
+tags: $:/tags/wikilabs/fieldswitcher
+title: $:/config/wikilabs/field-editor/schema
+type: text/vnd.tiddlywiki
+
+schema

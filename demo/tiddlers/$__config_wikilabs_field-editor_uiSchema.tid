@@ -1,0 +1,11 @@
+created: 20230218102457726
+creator: 林一二
+description: a [[jsonforms' option|https://jsonforms.io/docs/uischema/]] to describe the form's UI element and layout.
+icon: {{$:/core/images/spiral}}
+modified: 20230218102521958
+modifier: 林一二
+tags: $:/tags/wikilabs/fieldswitcher
+title: $:/config/wikilabs/field-editor/uiSchema
+type: text/vnd.tiddlywiki
+
+uiSchema

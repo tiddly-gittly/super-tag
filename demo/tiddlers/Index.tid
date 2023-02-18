@@ -19,6 +19,8 @@ Also allows developers to use the same set of fields, so their plugins works tog
 
 Some of plugins will provide SuperTag that you can already use, just add these tag to a tiddler, a form will automatically generate on the tiddler view mode.
 
+See [[Examples]] in this demo site to play around with the auto generated form.
+
 <$whiteboard tiddler="HowToUseSuperTagDiagram" readonly="yes" />
 
 !!! Advanced user - use TraitTag create SuperTag

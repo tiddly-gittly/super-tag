@@ -1,0 +1,13 @@
+created: 20230218101540326
+creator: 林一二
+modified: 20230218103707734
+modifier: 林一二
+tags: Index
+title: Examples
+type: text/vnd.tiddlywiki
+
+!! Task
+
+[[Task]] is a SuperTag, [[MyExampleTask]] is a normal tiddler adds this SuperTag.
+
+[[$:/TraitTag/ActionState]] and [[$:/TraitTag/Priority]] are example TraitTags adding to it.
