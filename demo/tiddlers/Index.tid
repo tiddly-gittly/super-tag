@@ -1,6 +1,63 @@
+created: 20230218072320640
+creator: 林一二
+modified: 20230218075342159
+modifier: 林一二
 title: Index
 type: text/vnd.tiddlywiki
 
 {{$:/snippets/minilanguageswitcher}}
 
-Some readme here.
+!! Why SuperTag
+
+Provide template for user to create form by simply adding a tag, so putting structure data into tw is much easier. User don't need to design field name, and easy to use WYSIWYG form make it happier to use these fields.
+
+Also allows developers to use the same set of fields, so their plugins works together seamlessly. For example, two TODO plugin can read each others' task data, makes TiddlyWiki community interoperate deeply.
+
+!! How to use
+
+!!! Normal user - use SuperTag
+
+Some of plugins will provide SuperTag that you can already use, just add these tag to a tiddler, a form will automatically generate on the tiddler view mode.
+
+<$whiteboard tiddler="HowToUseSuperTagDiagram" readonly="yes" />
+
+!!! Advanced user - use TraitTag create SuperTag
+
+Some of plugins will provide TraitTag that can be used to create your own SuperTag. Just add one or more TraitTag on a tiddler, this tiddler will become a SuperTag.
+
+<$whiteboard tiddler="HowToCreateSuperTagDiagram" readonly="yes" />
+
+!!! TraitTag developer - create TraitTag 
+
+As a developer, you will want to create your own TraitTag.
+
+A TraitTag has two important fields, `"schema"` and `"uiSchema"`.
+
+<$whiteboard tiddler="HowToCreateTraitTagDiagram" readonly="yes" height="850px" />
+
+* schema: a [[JSON Schema|https://json-schema.org/]] that describe what data a form will receive.
+* uiSchema: a [[jsonforms' option|https://jsonforms.io/docs/uischema/]] to describe the form's UI element and layout.
+
+See links above to learn how to write them. You can also learn from some existed TraitTag.
+
+!!! Plugin developer
+
+If you are creating a plugin that heavily make use of tiddler fields, You'd better search for existed supertag sub-plugins that provides trait tags, or search in [[tiddlywiki forum|https://talk.tiddlywiki.org]] for it.
+
+So you can reuse existed TraitTags. In this way, plugins in our community can work together, make users' tiddlywiki a real unified database.
+
+<$whiteboard tiddler="SuperTagShareTheTraitsDiagram" readonly="yes" height="400px" />
+
+!! Develop
+
+This is how SuperTag plugin works:
+
+# Auto generated form is displayed in a ViewTemplate that will show on the bottom of the tiddler
+## This ViewTemplate have a `<$list>` widget that conditionally shows the content
+## It shows if the tiddler has a SuperTag, and SuperTag has a TraitTag that tagged with `$:/SuperTag/TraitTag`.
+# A `<$supertag-form />` widget on this ViewTemplate
+## This widget will gather `schema` and `uiSchema` on these TraitTags upon running
+## It uses [[eclipsesource/jsonforms|https://github.com/eclipsesource/jsonforms]] open source library to build the form
+## Fill in the form using tiddler's existed data
+
+<$whiteboard tiddler="HowTechnicallySuperTagWorks" readonly="yes" height="900px" />
