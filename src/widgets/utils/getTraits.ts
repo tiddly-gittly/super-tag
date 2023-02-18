@@ -1,7 +1,8 @@
 import type { ITiddlerFields } from 'tiddlywiki';
+import type { JSONSchema4 } from 'json-schema';
 
 export interface ITraitTagData {
-  schema: Record<string, unknown>;
+  schema: JSONSchema4;
   uiSchema?: Record<string, unknown>;
 }
 export interface ISuperTagData {

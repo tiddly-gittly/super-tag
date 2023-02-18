@@ -1,11 +1,13 @@
 import type { IChangedTiddlers } from 'tiddlywiki';
+import * as JSONEditor from '@json-editor/json-editor';
+import '@json-editor/json-editor/src/themes/bootstrap5.css';
+import type { JSONSchema4 } from 'json-schema';
 import { widget as Widget } from '$:/core/modules/widgets/widget.js';
 import { getTraits } from '../utils/getTraits';
 
 class SupertagFormWidget extends Widget {
-  // constructor(parseTreeNode: IParseTreeNode, options?: unknown) {
-  //   super(parseTreeNode, options);
-  // }
+  editor?: JSONEditor.JSONEditor<any>;
+  containerElement?: HTMLDivElement;
 
   refresh(_changedTiddlers: IChangedTiddlers): boolean {
     return false;
@@ -21,14 +23,34 @@ class SupertagFormWidget extends Widget {
 
     const currentTiddlerTitle = this.getVariable('currentTiddler');
     const traits = getTraits(currentTiddlerTitle);
-    // DEBUG: console traits
-    console.log(`traits`, traits);
-
-    const containerElement = document.createElement('div');
-    containerElement.textContent = 'Hello world!';
-    this.domNodes.push(containerElement);
-    // eslint-disable-next-line unicorn/prefer-dom-node-append
-    parent.appendChild(containerElement);
+    if (traits.length === 0) return;
+    /**
+     * Merge schema by merging traits' properties together.
+     * Assuming tiddler is a flat JSON `Record<string, string | number>` with only 1 level.
+     */
+    const fullSchema: JSONSchema4 = traits.reduce(
+      (accumulator: JSONSchema4, trait) => {
+        trait.traits.forEach(({ schema }) => {
+          accumulator.properties = { ...accumulator.properties, ...schema.properties };
+        });
+        return accumulator;
+      },
+      {
+        type: 'object',
+        properties: {},
+      },
+    );
+    if (this.editor === undefined) {
+      const containerElement = document.createElement('div');
+      this.containerElement = containerElement;
+      this.domNodes.push(containerElement);
+      // eslint-disable-next-line unicorn/prefer-dom-node-append
+      parent.appendChild(containerElement);
+      this.editor = new JSONEditor.JSONEditor(containerElement, {
+        schema: fullSchema,
+        theme: 'bootstrap5',
+      });
+    }
   }
 }
 
