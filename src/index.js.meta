@@ -1,5 +1,5 @@
 creator: LinOnetwo
-title: $:/plugins/linonetwo/tw-react/widget.js
+title: $:/plugins/linonetwo/super-tag/widget.js
 type: application/javascript
-module-type: library
+module-type: widget
 hide-body: yes
