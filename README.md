@@ -2,6 +2,11 @@
 
 Auto generate input form on a tiddler by simply adding a SuperTag to it. Create a SuperTag by compositing existing TraitTags.
 
+See following resources to learn how to use:
+
+* talk forum post [SuperTag plugin, auto-generate a field editor on view template](https://talk.tiddlywiki.org/t/supertag-plugin-auto-generate-a-field-editor-on-view-template/6245)
+* Demo site [SuperTag plugin's demo site](https://tiddly-gittly.github.io/super-tag/)
+
 ## Acknowledgement
 
 Use [json-editor/json-editor](https://github.com/json-editor/json-editor) for form rendering. AFAIK [joshuafontany/TW5-jsoneditor](https://github.com/joshuafontany/TW5-jsoneditor) is using it too.
