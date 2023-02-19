@@ -2,6 +2,12 @@
 
 Auto generate input form on a tiddler by simply adding a SuperTag to it. Create a SuperTag by compositing existing TraitTags.
 
+## Acknowledgement
+
+Use [json-editor/json-editor](https://github.com/json-editor/json-editor) for form rendering. AFAIK [joshuafontany/TW5-jsoneditor](https://github.com/joshuafontany/TW5-jsoneditor) is using it too.
+
+(Not using [eclipsesource/jsonforms](https://github.com/eclipsesource/jsonforms) because we need vanilly js renderer, without ReactJS).
+
 ## During development
 
 There are some scripts you can run to boost your development.
