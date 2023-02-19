@@ -9,7 +9,7 @@ export interface ISuperTagData {
   title: string;
   traits: ITraitTagData[];
 }
-export function getTraits(currentTiddlerTitle: string): ISuperTagData[] {
+export function getSuperTagTraits(currentTiddlerTitle: string): ISuperTagData[] {
   const potentialSuperTags = $tw.wiki
     .getTiddler(currentTiddlerTitle)
     ?.fields?.tags?.map((tagTitle) => $tw.wiki.getTiddler(tagTitle)?.fields)
