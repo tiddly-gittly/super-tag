@@ -45,6 +45,7 @@ specifiers:
   prettier: 2.8.4
   rimraf: ^4.1.2
   serve: 14.2.0
+  spectre.css: ^0.5.9
   tiddlywiki: 5.2.5
   ts-jest: 29.0.5
   tslib: 2.5.0
@@ -57,6 +58,7 @@ specifiers:
 
 dependencies:
   '@json-editor/json-editor': 2.9.0-beta.1
+  spectre.css: 0.5.9
 
 devDependencies:
   '@types/archiver': 5.3.1
@@ -5335,6 +5337,10 @@ packages:
   /spdx-license-ids/3.0.12:
     resolution: {integrity: sha512-rr+VVSXtRhO4OHbXUiAF7xW3Bo9DuuF6C5jH+q/x15j2jniycgKbxU09Hr0WqlSLUs4i4ltHGXqTe7VHclYWyA==}
     dev: true
+
+  /spectre.css/0.5.9:
+    resolution: {integrity: sha512-9jUqwZmCnvflrxFGcK+ize43TvjwDjqMwZPVubEtSIHzvinH0TBUESm1LcOJx3Ur7bdPaeOHQIjOqBl1Y5kLFw==}
+    dev: false
 
   /split/0.3.3:
     resolution: {integrity: sha512-wD2AeVmxXRBoX44wAycgjVpMhvbwdI2aZjCkvfNcH1YqHQvJVa1duWc73OyVGJUc05fhFaTZeQ/PYsrmyH0JVA==}

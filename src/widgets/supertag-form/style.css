@@ -1,0 +1,44 @@
+.je-object__container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* Use grid in supported browser */
+  display: grid;
+}
+.je-object__container .btn:last-child:not(:first-child) {
+  margin: unset;
+  border-radius: 0;
+}
+.je-object__container button.json-editor-btn-edit_properties.json-editor-btntype-properties {
+  /* overwrite mr-2 */ 
+  margin: 0 !important;
+}
+h4.je-object__title {
+  margin: 0;
+  /* margin extra space in flex group when grid not working */
+  margin-right: 5px;
+  font-size: 1.2em;
+  white-space: nowrap;
+}
+h4.je-object__title > .json-editor-btn-collapse {
+  margin-left: 0;
+}
+.btn-group.je-object__controls {
+  margin: 0;
+}
+
+div[data-theme='spectre'] div.je-panel {
+  margin: 0;
+  padding: 0;
+}
+.je-panel > div.container {
+  padding: 0;
+}
+.je-panel > div.container > div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.je-panel > div.container > div > .columns {
+  margin: unset;
+}

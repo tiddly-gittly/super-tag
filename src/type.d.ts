@@ -42,7 +42,7 @@ declare module '@json-editor/json-editor' {
     /**
      * The icon library to use for the editor.
      */
-    iconlib?: 'bootstrap2' | 'bootstrap3' | 'foundation2' | 'foundation3' | 'jqueryui' | 'fontawesome3' | 'fontawesome4' | undefined;
+    iconlib?: 'jqueryui' | 'fontawesome3' | 'fontawesome4' | 'fontawesome5' | 'openiconic' | 'spectre' | undefined;
     /**
      * If true, makes oneOf copy properties over when switching.
      */
@@ -79,6 +79,10 @@ declare module '@json-editor/json-editor' {
      * The CSS theme to use.
      */
     theme?: 'barebones' | 'html' | 'bootstrap4' | 'bootstrap5' | 'spectre' | 'tailwind' | undefined;
+    /**
+     * If true default values based on the "type" of the property will be used
+     */
+    use_default_values?: boolean | undefined;
   }
   interface JSONEditorError {
     message: string;

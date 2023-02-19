@@ -7,7 +7,7 @@
         "tags": "$:/SuperTag/TraitTag",
         "type": "text/vnd.tiddlywiki",
         "wl-field-name-text": "schema",
-        "schema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"string\": {\n      \"type\": \"string\"\n    }\n  }\n}",
+        "schema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"color\": {\n      \"type\": \"string\",\n      \"format\": \"color\"\n}\n  }\n}",
         "uiSchema": "{\n  \"type\": \"VerticalLayout\",\n  \"elements\": [\n    {\n      \"type\": \"Control\",\n      \"scope\": \"#/properties/string\"\n    }\n  ]\n}"
     }
 ]

@@ -1,5 +1,5 @@
 creator: LinOnetwo
-title: $:/plugins/linonetwo/super-tag/widgets/supertag-form.js
+title: $:/plugins/linonetwo/super-tag/widgets/supertag-form/index.js
 type: application/javascript
 module-type: library
 hide-body: yes
