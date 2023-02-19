@@ -1,6 +1,6 @@
 created: 20230218072320640
 creator: 林一二
-modified: 20230218075342159
+modified: 20230219091548144
 modifier: 林一二
 title: Index
 type: text/vnd.tiddlywiki
@@ -33,9 +33,9 @@ Some of plugins will provide TraitTag that can be used to create your own SuperT
 
 As a developer, you will want to create your own TraitTag.
 
-A TraitTag has two important fields, `"schema"` and `"uiSchema"`.
+A TraitTag has a important field `"schema"`.
 
-<$whiteboard tiddler="HowToCreateTraitTagDiagram" readonly="yes" height="850px" />
+<$whiteboard tiddler="HowToCreateTraitTagDiagram" readonly="yes" height="750px" />
 
 * schema: a [[JSON Schema|https://json-schema.org/]] that describe what data a form will receive.
 ** You may refer to [[JSON Editor Doc#JSON Schema Support|https://github.com/json-editor/json-editor#json-schema-support]] for advanced features in the form
@@ -60,7 +60,7 @@ This is how SuperTag plugin works:
 ## This ViewTemplate have a `<$list>` widget that conditionally shows the content
 ## It shows if the tiddler has a SuperTag, and SuperTag has a TraitTag that tagged with `$:/SuperTag/TraitTag`.
 # A `<$supertag-form />` widget on this ViewTemplate
-## This widget will gather `schema` and `uiSchema` on these TraitTags upon running
+## This widget will gather `schema` field on these TraitTags upon running
 ## It uses [[eclipsesource/jsonforms|https://github.com/eclipsesource/jsonforms]] open source library to build the form
 ## Fill in the form using tiddler's existed data
 

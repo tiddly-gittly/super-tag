@@ -9,7 +9,6 @@
         "tags": "$:/SuperTag/TraitTag",
         "type": "text/vnd.tiddlywiki",
         "schema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"completed\": {\n      \"type\": \"boolean\"\n    },\n    \"completeType\": {\n      \"type\": \"string\",\n      \"enum\": [\"Delay\", \"AtTime\", \"InAdvance\"]\n    },\n    \"completedCount\": {\n      \"type\": \"number\"\n    }\n  },\n  \"required\": [\"completed\"]\n}\n",
-        "wl-field-name-text": "schema",
-        "uiSchema": "{\n  \"type\": \"VerticalLayout\",\n  \"elements\": [\n    {\n      \"type\": \"Control\",\n      \"scope\": \"#/properties/completed\"\n    },\n    {\n      \"type\": \"Control\",\n      \"scope\": \"#/properties/completeType\"\n    },\n    {\n      \"type\": \"Control\",\n      \"scope\": \"#/properties/completedCount\"\n    }\n  ]\n}"
+        "wl-field-name-text": "schema"
     }
 ]

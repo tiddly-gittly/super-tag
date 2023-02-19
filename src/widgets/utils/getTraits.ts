@@ -3,7 +3,6 @@ import type { JSONSchema4 } from 'json-schema';
 
 export interface ITraitTagData {
   schema: JSONSchema4;
-  uiSchema?: Record<string, unknown>;
 }
 export interface ISuperTagData {
   title: string;
@@ -23,7 +22,7 @@ export function getSuperTagTraits(currentTiddlerTitle: string): ISuperTagData[] 
           const potentialTraitTiddler = $tw.wiki.getTiddler(traitTitle);
           if (potentialTraitTiddler?.fields?.tags?.some((tag) => tag === '$:/SuperTag/TraitTag') !== true) return undefined;
           // now it is confirmed to be a trait tag
-          let { title, schema, uiSchema } = potentialTraitTiddler.fields;
+          let { title, schema } = potentialTraitTiddler.fields;
           if (typeof schema !== 'string') return undefined;
           try {
             schema = JSON.parse(schema);
@@ -31,16 +30,15 @@ export function getSuperTagTraits(currentTiddlerTitle: string): ISuperTagData[] 
             console.error(`TraitTag ${title} has invalid schema, error: ${(error as Error).message}`);
             return undefined;
           }
-          if (typeof uiSchema !== 'string') return undefined;
-          try {
-            uiSchema = JSON.parse(uiSchema);
-          } catch (error) {
-            console.error(`TraitTag ${title} has invalid uiSchema, error: ${(error as Error).message}`);
-            return undefined;
-          }
+          // if (typeof uiSchema !== 'string') return undefined;
+          // try {
+          //   uiSchema = JSON.parse(uiSchema);
+          // } catch (error) {
+          //   console.error(`TraitTag ${title} has invalid uiSchema, error: ${(error as Error).message}`);
+          //   return undefined;
+          // }
           return {
             schema,
-            uiSchema,
           } as ITraitTagData;
         })
         .filter((item): item is ITraitTagData => item !== undefined);
