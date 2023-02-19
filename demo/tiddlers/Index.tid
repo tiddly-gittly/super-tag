@@ -38,9 +38,11 @@ A TraitTag has two important fields, `"schema"` and `"uiSchema"`.
 <$whiteboard tiddler="HowToCreateTraitTagDiagram" readonly="yes" height="850px" />
 
 * schema: a [[JSON Schema|https://json-schema.org/]] that describe what data a form will receive.
-* uiSchema: a [[jsonforms' option|https://jsonforms.io/docs/uischema/]] to describe the form's UI element and layout.
+** You may refer to [[JSON Editor Doc#JSON Schema Support|https://github.com/json-editor/json-editor#json-schema-support]] for advanced features in the form
+** A basic assumption is that the JSON Schema are `type: "object"` and has only 1 level of properties.
+** All properties provided by all trait tags are merged into a single JSON Schema, and then is used to display the SuperTag Form
 
-See links above to learn how to write them. You can also learn from some existed TraitTag.
+See links above to learn how to write them. You can also learn from some existed [[TraitTag Examples|$:/SuperTag/TraitTag]].
 
 !!! Plugin developer
 
