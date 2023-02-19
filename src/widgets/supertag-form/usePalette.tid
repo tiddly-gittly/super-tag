@@ -9,7 +9,7 @@ button.btn.btn-primary {
   border-color:<<colour button-border>>;
   color: <<colour button-foreground>>;
 }
-button.btn.btn-primary:hover {
+button.btn.btn-primary:hover, button.btn.btn-primary:active, button.btn.btn-primary:focus {
 	background-color: <<colour button-background-hover>>;
   border-color:<<colour button-border>>;
   color: <<colour button-foreground>>;
