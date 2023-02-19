@@ -1,22 +1,17 @@
 import type { IChangedTiddlers } from 'tiddlywiki';
-import * as JSONEditor from '@json-editor/json-editor';
+import type * as JSONEditor from '@json-editor/json-editor';
 import 'spectre.css/dist/spectre.min.css';
 import 'spectre.css/dist/spectre-icons.css';
 import 'spectre.css/dist/spectre-exp.css';
 import './style.css';
 import { widget as Widget } from '$:/core/modules/widgets/widget.js';
-import { getSuperTagTraits } from '../utils/getTraits';
-import { mergeSchema } from '../utils/mergeSchema';
+import { initEditor } from './initEditor';
 
 class SupertagFormWidget extends Widget {
-  editor?: JSONEditor.JSONEditor<any>;
+  editor?: JSONEditor.JSONEditor<unknown>;
   containerElement?: HTMLDivElement;
   errorValidatorInfoElement?: HTMLSpanElement;
   currentTiddlerTitle?: string;
-
-  refresh(_changedTiddlers: IChangedTiddlers): boolean {
-    return false;
-  }
 
   /**
    * Lifecycle method: Render this widget into the DOM
@@ -39,22 +34,25 @@ class SupertagFormWidget extends Widget {
       this.domNodes.push(containerElement);
       // eslint-disable-next-line unicorn/prefer-dom-node-append
       parent.appendChild(containerElement);
-      const superTags = getSuperTagTraits(currentTiddlerTitle);
-      const tiddlerFields = $tw.wiki.getTiddler(currentTiddlerTitle)?.fields ?? {};
-      if (superTags.length === 0) return;
-      const fullSchema = mergeSchema(superTags);
-      this.editor = new JSONEditor.JSONEditor(editorElement, {
-        schema: fullSchema,
-        theme: 'spectre',
-        iconlib: 'spectre',
-        disable_edit_json: true,
-        form_name_root: 'SuperTag',
-        startval: tiddlerFields,
-        no_additional_properties: true,
-        use_default_values: true,
-      });
-      this.editor.on('change', this.formOnChange);
+      this.editor = initEditor(currentTiddlerTitle, editorElement);
+      this.editor?.on('change', this.formOnChange);
     }
+  }
+
+  public refresh(changedTiddlers: IChangedTiddlers): boolean {
+    if (this.currentTiddlerTitle === undefined) return false;
+    const changedAttributes = this.computeAttributes();
+    if ($tw.utils.count(changedAttributes) > 0 || changedTiddlers[this.currentTiddlerTitle] !== undefined) {
+      this.refreshSelf();
+      return true;
+    }
+    return false;
+  }
+
+  public refreshSelf() {
+    if (this.currentTiddlerTitle === undefined || this.editor === undefined) return;
+    const tiddlerFields = $tw.wiki.getTiddler(this.currentTiddlerTitle)?.fields ?? ({} as Record<string, unknown>);
+    this.editor.setValue(tiddlerFields);
   }
 
   private readonly formOnChange = () => {
@@ -67,8 +65,17 @@ class SupertagFormWidget extends Widget {
         this.errorValidatorInfoElement.className = 'label label-warning';
         this.errorValidatorInfoElement.textContent = 'Form not valid';
       } else {
-        const tiddlerFields = $tw.wiki.getTiddler(this.currentTiddlerTitle)?.fields ?? {};
-        $tw.wiki.addTiddler({ ...tiddlerFields, ...latestFormValue, title: this.currentTiddlerTitle });
+        const tiddlerFields = $tw.wiki.getTiddler(this.currentTiddlerTitle)?.fields ?? ({} as Record<string, unknown>);
+
+        let hasChange = false;
+        Object.keys(latestFormValue).forEach((key) => {
+          if (tiddlerFields[key] !== latestFormValue[key]) {
+            hasChange = true;
+          }
+        });
+        if (hasChange) {
+          $tw.wiki.addTiddler({ ...tiddlerFields, ...latestFormValue, title: this.currentTiddlerTitle });
+        }
       }
     }
   };

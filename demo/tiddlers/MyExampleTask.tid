@@ -5,3 +5,8 @@ modifier: 林一二
 tags: Task ColorAndCounter
 title: MyExampleTask
 type: text/vnd.tiddlywiki
+
+<$button>
+  Update complete counter
+  <$action-setfield tiddler=<<currentTiddler>> completedCount="1" />
+</$button>
