@@ -5,8 +5,15 @@ modifier: 林一二
 tags: Task ColorAndCounter
 title: MyExampleTask
 type: text/vnd.tiddlywiki
+completed: true
+
+Click on this, and a new input will show up:
 
 <$button>
   Update complete counter
   <$action-setfield tiddler=<<currentTiddler>> completedCount="1" />
 </$button>
+
+Because by default it only shows fields that already has value.
+
+If you want more field inputs to show up, click " ≡ properties" button to expand the available field editor list: (as taught in the [[Readme|Index]])
