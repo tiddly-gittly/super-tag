@@ -1,7 +1,8 @@
 {
   "url": "https://github.com/tiddly-gittly/tw-example-plugin",
   "tsFiles": [
-    "src/widgets/supertag-form/index.ts"
+    "src/widgets/supertag-form/index.ts",
+    "src/widgets/json-editor-form/index.ts"
   ],
   "ignoredExtensionsWhenBuildPlugin": [
     ".ts",
