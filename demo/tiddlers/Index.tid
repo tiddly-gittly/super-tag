@@ -56,6 +56,14 @@ So you can reuse existed TraitTags. In this way, plugins in our community can wo
 
 <$whiteboard tiddler="SuperTagShareTheTraitsDiagram" readonly="yes" height="400px" />
 
+!!! General propose JSON Form Editor
+
+See [[WidgetExamples]] or [[Examples]].
+
+This is only provided as a tool for plugin developers to build custom forms.
+
+For interoperability consideration, it is better to use the TraitTag approach described above, so our TiddlyWiki developer community can have a consistent way to deliver form to end users.
+
 !! Develop
 
 This is how SuperTag plugin works:

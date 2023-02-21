@@ -12,6 +12,7 @@ tags: $:/tags/ViewTemplate
   <$list filter="[all[current]tags[]tags[]tags[]match[$:/SuperTag/TraitTag]then<thisCurrentTiddler>]">
 
     <$supertag-form />
+    <!-- <$json-editor-form filter="[all[current]debug-log[]tags[]tags[]] :filter[tags[]match[$:/SuperTag/TraitTag]] :and[get[schema]]" tiddler=<<currentTiddler>> /> -->
 
   </$list>
 </$let>

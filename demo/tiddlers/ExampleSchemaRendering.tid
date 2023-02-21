@@ -1,0 +1,10 @@
+title: ExampleSchemaRendering
+type: text/vnd.tiddlywiki
+schema: {  "type": "object",  "properties": {    "color": {      "type": "string",      "format": "color"}  }}
+color: #66ccff
+
+<$json-editor-form filter="[all[current]get[schema]debug-log[]]" />
+
+My color is {{!!color}} : <<tag ExampleSchemaRendering>>
+
+My schema is <$codeblock code={{!!schema}} />

@@ -21,6 +21,8 @@ class JSONEditorFormWidget extends SupertagFormWidget {
     this.execute();
     const filterToGetJSONSchema = this.getAttribute('filter') ?? '[all[current]tags[]tags[]] :filter[tags[]match[$:/SuperTag/TraitTag]] :and[get[schema]]';
     const currentTiddlerTitle = this.getAttribute('tiddler') ?? this.getVariable('currentTiddler');
+    // DEBUG: console currentTiddlerTitle
+    console.log(`currentTiddlerTitle`, currentTiddlerTitle);
     this.currentTiddlerTitle = currentTiddlerTitle;
     this.filterToGetJSONSchema = filterToGetJSONSchema;
 
@@ -35,7 +37,8 @@ class JSONEditorFormWidget extends SupertagFormWidget {
       this.domNodes.push(containerElement);
       // eslint-disable-next-line unicorn/prefer-dom-node-append
       parent.appendChild(containerElement);
-      const { fullSchema, tiddlerFields } = getFullSchemaFromFilter(filterToGetJSONSchema, currentTiddlerTitle);
+      if (this.parentWidget === undefined) return;
+      const { fullSchema, tiddlerFields } = getFullSchemaFromFilter(filterToGetJSONSchema, currentTiddlerTitle, this.parentWidget);
       if (fullSchema === undefined) return;
       if (tiddlerFields === undefined) return;
       this.editor = initEditor(fullSchema, tiddlerFields, editorElement);

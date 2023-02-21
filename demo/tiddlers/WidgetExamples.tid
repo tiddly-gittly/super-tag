@@ -1,0 +1,35 @@
+created: 20230218101540326
+creator: 林一二
+modified: 20230218125652922
+modifier: 林一二
+tags: Examples
+title: WidgetExamples
+type: text/vnd.tiddlywiki
+
+!! General propose JSON Form Editor Widget usage
+
+We also provides a widget that can render a form based on a filter whose output is a list of JSON Schema:
+
+`<$json-editor-form filter="[all[current]tags[]tags[]] :filter[tags[]match[$:/SuperTag/TraitTag]] :and[get[schema]]" tiddler=<<currentTiddler>> />`
+
+The above widget usage will have exact the same output as `<$supertag-form />`, as suggested in the [[talk forum post|https://talk.tiddlywiki.org/t/supertag-plugin-auto-generate-a-field-editor-on-view-template/6245/2?u=linonetwo]].
+
+Here are some more Examples:
+
+!!! Render a form based on current tiddler's schema field
+
+`tiddler` parameter is default to `<<currentTiddler>>`, so can be omitted.
+
+`<$json-editor-form filter="[all[current]get[schema]]" />`
+
+Try it in [[ExampleSchemaRendering]]
+
+!!! Render a form to control other tiddler
+
+We can use this widget to control the `color` field on [[ExampleSchemaRendering]] tiddler, also use the `schema` field on it.
+
+`<$json-editor-form filter="[[ExampleSchemaRendering]get[schema]]" tiddler=ExampleSchemaRendering />`
+
+<$json-editor-form filter="[[ExampleSchemaRendering]get[schema]]" tiddler=ExampleSchemaRendering />
+
+<<tag ExampleSchemaRendering>>

@@ -1,4 +1,4 @@
-import { type ITiddlerFields } from 'tiddlywiki';
+import type { Widget, ITiddlerFields } from 'tiddlywiki';
 import { type ISuperTagData, getSuperTagTraits } from './getTraits';
 import { mergeSchema } from './mergeSchema';
 import type { JSONSchema4 } from 'json-schema';
@@ -11,9 +11,9 @@ export function getFullSchemaFromCurrentTiddler(currentTiddlerTitle: string) {
   return { fullSchema, tiddlerFields };
 }
 
-export function getFullSchemaFromFilter(filter: string, currentTiddlerTitle: string) {
+export function getFullSchemaFromFilter(filter: string, currentTiddlerTitle: string, parentWidget: Widget) {
   const jsonSchemas = $tw.wiki
-    .filterTiddlers(filter)
+    .filterTiddlers(filter, parentWidget)
     .map((schema) => {
       try {
         return JSON.parse(schema) as JSONSchema4;
