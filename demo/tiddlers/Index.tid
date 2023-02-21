@@ -23,6 +23,14 @@ Also allows developers to use the same set of fields, so their plugins works tog
 
 Some of plugins will provide SuperTag that you can already use, just add these tag to a tiddler, a form will automatically generate on the tiddler view mode.
 
+By simply adding a SuperTag to a tiddler (For example, Task), you will see a form showing in your tiddler (e.g. completed and completeType field editor), see screenshot below:
+
+[img[https://talk.tiddlywiki.org/uploads/default/optimized/2X/1/187e4fb88404427a4f2704e4d1ea07bda6b69653_2_832x750.png]]
+
+The field is only shown if your tiddler already had this field. To edit non-existed field that defined by SuperTag, click " ≡ properties" button to expand the available field editor list:
+
+[img[https://talk.tiddlywiki.org/uploads/default/optimized/2X/e/e26960678985eea0da9f54c43b075ad1c9cd277a_2_1035x621.png]]
+
 See [[Examples]] in this demo site to play around with the auto generated form.
 
 <$whiteboard tiddler="HowToUseSuperTagDiagram" readonly="yes" />
