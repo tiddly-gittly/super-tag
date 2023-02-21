@@ -5,8 +5,9 @@
     return;
   }
   // separate the widget from the exports here, so we can skip the require of react code if `!$tw.browser`. Those ts code will error if loaded in the nodejs side.
-  const components = require('$:/plugins/linonetwo/super-tag/widgets/supertag-form/index.js');
-  const { 'supertag-form': SupertagFormWidget } = components;
+  const { 'supertag-form': SupertagFormWidget } = require('$:/plugins/linonetwo/super-tag/widgets/supertag-form/index.js');
+  const { 'json-editor-form': JSONEditorFormWidget } = require('$:/plugins/linonetwo/super-tag/widgets/json-editor-form/index.js');
   // declare const exports: Record<string, typeof Widget>;
   exports['supertag-form'] = SupertagFormWidget;
+  exports['json-editor-form'] = JSONEditorFormWidget;
 })();

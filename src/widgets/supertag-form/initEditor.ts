@@ -1,12 +1,8 @@
 import * as JSONEditor from '@json-editor/json-editor';
-import { getSuperTagTraits } from '../utils/getTraits';
-import { mergeSchema } from '../utils/mergeSchema';
+import type { ITiddlerFields } from 'tiddlywiki';
+import type { JSONSchema4 } from 'json-schema';
 
-export function initEditor(currentTiddlerTitle: string, editorElement: HTMLDivElement): JSONEditor.JSONEditor<unknown> | undefined {
-  const superTags = getSuperTagTraits(currentTiddlerTitle);
-  const tiddlerFields = $tw.wiki.getTiddler(currentTiddlerTitle)?.fields ?? {};
-  if (superTags.length === 0) return;
-  const fullSchema = mergeSchema(superTags);
+export function initEditor(fullSchema: JSONSchema4, tiddlerFields: ITiddlerFields, editorElement: HTMLDivElement): JSONEditor.JSONEditor<unknown> | undefined {
   return new JSONEditor.JSONEditor(editorElement, {
     schema: fullSchema,
     theme: 'spectre',

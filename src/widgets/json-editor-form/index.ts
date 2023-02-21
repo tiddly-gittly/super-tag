@@ -1,28 +1,28 @@
-import type { IChangedTiddlers } from 'tiddlywiki';
+import type { widget as Widget } from '$:/core/modules/widgets/widget.js';
 import type * as JSONEditor from '@json-editor/json-editor';
-import './spectre-min.scss';
-import 'spectre.css/dist/spectre-icons.css';
-import './style.css';
-import { widget as Widget } from '$:/core/modules/widgets/widget.js';
-import { initEditor } from './initEditor';
-import { formOnChange } from '../utils/formOnChange';
-import { getFullSchemaFromCurrentTiddler } from '../utils/getFullSchema';
 
-class SupertagFormWidget extends Widget {
+import components from '$:/plugins/linonetwo/super-tag/widgets/supertag-form/index.js';
+import { initEditor } from '../supertag-form/initEditor';
+import { formOnChange } from '../utils/formOnChange';
+import { getFullSchemaFromFilter } from '../utils/getFullSchema';
+
+const { 'supertag-form': SupertagFormWidget } = components as Record<string, typeof Widget>;
+
+class JSONEditorFormWidget extends SupertagFormWidget {
   editor?: JSONEditor.JSONEditor<unknown>;
   containerElement?: HTMLDivElement;
   errorValidatorInfoElement?: HTMLSpanElement;
+  filterToGetJSONSchema?: string;
   currentTiddlerTitle?: string;
 
-  /**
-   * Lifecycle method: Render this widget into the DOM
-   */
-  public render(parent: Element, _nextSibling: Element | null): void {
+  render(parent: Element, _nextSibling: Element | null): void {
     this.parentDomNode = parent;
     this.computeAttributes();
     this.execute();
+    const filterToGetJSONSchema = this.getAttribute('filter') ?? '[all[current]tags[]tags[]] :filter[tags[]match[$:/SuperTag/TraitTag]] :and[get[schema]]';
     const currentTiddlerTitle = this.getAttribute('tiddler') ?? this.getVariable('currentTiddler');
     this.currentTiddlerTitle = currentTiddlerTitle;
+    this.filterToGetJSONSchema = filterToGetJSONSchema;
 
     if (this.editor === undefined) {
       const containerElement = document.createElement('div');
@@ -35,7 +35,7 @@ class SupertagFormWidget extends Widget {
       this.domNodes.push(containerElement);
       // eslint-disable-next-line unicorn/prefer-dom-node-append
       parent.appendChild(containerElement);
-      const { fullSchema, tiddlerFields } = getFullSchemaFromCurrentTiddler(currentTiddlerTitle) ?? {};
+      const { fullSchema, tiddlerFields } = getFullSchemaFromFilter(filterToGetJSONSchema, currentTiddlerTitle);
       if (fullSchema === undefined) return;
       if (tiddlerFields === undefined) return;
       this.editor = initEditor(fullSchema, tiddlerFields, editorElement);
@@ -43,34 +43,10 @@ class SupertagFormWidget extends Widget {
     }
   }
 
-  public refresh(changedTiddlers: IChangedTiddlers): boolean {
-    if (this.currentTiddlerTitle === undefined) return false;
-    const changedAttributes = this.computeAttributes();
-    if ($tw.utils.count(changedAttributes) > 0 || changedTiddlers[this.currentTiddlerTitle] !== undefined) {
-      this.refreshSelf();
-      return true;
-    }
-    return false;
-  }
-
-  public refreshSelf() {
-    if (this.currentTiddlerTitle === undefined || this.editor === undefined) return;
-    const tiddlerFields = $tw.wiki.getTiddler(this.currentTiddlerTitle)?.fields ?? ({} as Record<string, unknown>);
-    this.editor.setValue(tiddlerFields);
-  }
-
   private readonly formOnChange = () => {
     formOnChange(this.currentTiddlerTitle, this.editor, this.errorValidatorInfoElement);
   };
-
-  public removeChildDomNodes(): void {
-    this.editor?.off('change', this.formOnChange);
-    this.editor?.destroy();
-    this.editor = undefined;
-    this.containerElement = undefined;
-    this.errorValidatorInfoElement = undefined;
-  }
 }
 
 declare const exports: Record<string, typeof Widget>;
-exports['supertag-form'] = SupertagFormWidget;
+exports['json-editor-form'] = JSONEditorFormWidget;

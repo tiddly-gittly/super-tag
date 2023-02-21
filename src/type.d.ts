@@ -1,4 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-types */
+
+declare module '$:/plugins/linonetwo/super-tag/widgets/supertag-form/index.js' {}
+
 declare module '@json-editor/json-editor' {
   // copy from https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/json-editor/index.d.ts
 
