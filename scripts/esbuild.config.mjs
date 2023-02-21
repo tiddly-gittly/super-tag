@@ -1,3 +1,4 @@
+/* eslint-disable security/detect-unsafe-regex */
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
@@ -5,6 +6,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import browserslist from 'browserslist';
 import { esbuildPluginBrowserslist } from 'esbuild-plugin-browserslist';
+import { sassPlugin } from 'esbuild-sass-plugin';
 import fs from 'fs-extra';
 import path from 'path';
 
@@ -29,6 +31,7 @@ export const config = {
   treeShaking: true,
   external: ['$:/*', 'react', 'react-dom'],
   plugins: [
+    sassPlugin(),
     esbuildPluginBrowserslist(browserslist('defaults'), {
       printUnknownTargets: false,
     }),

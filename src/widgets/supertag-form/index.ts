@@ -1,8 +1,7 @@
 import type { IChangedTiddlers } from 'tiddlywiki';
 import type * as JSONEditor from '@json-editor/json-editor';
-import 'spectre.css/dist/spectre.min.css';
+import './spectre-min.scss';
 import 'spectre.css/dist/spectre-icons.css';
-import 'spectre.css/dist/spectre-exp.css';
 import './style.css';
 import { widget as Widget } from '$:/core/modules/widgets/widget.js';
 import { initEditor } from './initEditor';
