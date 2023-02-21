@@ -10,6 +10,7 @@
     ".tsx",
     ".snap",
     ".tldr",
+    ".scss",
     ".md",
     ".json"
   ],
