@@ -2,7 +2,7 @@ import type { widget as Widget } from '$:/core/modules/widgets/widget.js';
 import type * as JSONEditor from '@json-editor/json-editor';
 
 import components from '$:/plugins/linonetwo/super-tag/widgets/supertag-form/index.js';
-import { initEditor } from '../supertag-form/initEditor';
+import { initEditor } from '$:/plugins/linonetwo/super-tag/utils/initEditor.js';
 import { formOnChange } from '../utils/formOnChange';
 import { getFullSchemaFromFilter } from '../utils/getFullSchema';
 
@@ -21,8 +21,6 @@ class JSONEditorFormWidget extends SupertagFormWidget {
     this.execute();
     const filterToGetJSONSchema = this.getAttribute('filter') ?? '[all[current]tags[]tags[]] :filter[tags[]match[$:/SuperTag/TraitTag]] :and[get[schema]]';
     const currentTiddlerTitle = this.getAttribute('tiddler') ?? this.getVariable('currentTiddler');
-    // DEBUG: console currentTiddlerTitle
-    console.log(`currentTiddlerTitle`, currentTiddlerTitle);
     this.currentTiddlerTitle = currentTiddlerTitle;
     this.filterToGetJSONSchema = filterToGetJSONSchema;
 

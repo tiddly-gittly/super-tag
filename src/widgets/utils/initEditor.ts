@@ -1,8 +1,9 @@
 import * as JSONEditor from '@json-editor/json-editor';
 import type { ITiddlerFields } from 'tiddlywiki';
 import type { JSONSchema4 } from 'json-schema';
+import type { initEditor as IInitEditor } from '$:/plugins/linonetwo/super-tag/utils/initEditor.js';
 
-export function initEditor(fullSchema: JSONSchema4, tiddlerFields: ITiddlerFields, editorElement: HTMLDivElement): JSONEditor.JSONEditor<unknown> | undefined {
+function initEditor(fullSchema: JSONSchema4, tiddlerFields: ITiddlerFields, editorElement: HTMLDivElement): JSONEditor.JSONEditor<unknown> | undefined {
   return new JSONEditor.JSONEditor(editorElement, {
     schema: fullSchema,
     theme: 'spectre',
@@ -14,3 +15,6 @@ export function initEditor(fullSchema: JSONSchema4, tiddlerFields: ITiddlerField
     use_default_values: true,
   });
 }
+
+declare const exports: Record<string, typeof IInitEditor>;
+exports.initEditor = initEditor;

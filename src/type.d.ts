@@ -1,6 +1,12 @@
 /* eslint-disable @typescript-eslint/ban-types */
 
 declare module '$:/plugins/linonetwo/super-tag/widgets/supertag-form/index.js' {}
+declare module '$:/plugins/linonetwo/super-tag/utils/initEditor.js' {
+  import type { JSONSchema4 } from 'json-schema';
+  import type { ITiddlerFields } from 'tiddlywiki';
+  import type * as JSONEditor from '@json-editor/json-editor';
+  export function initEditor(fullSchema: JSONSchema4, tiddlerFields: ITiddlerFields, editorElement: HTMLDivElement): JSONEditor.JSONEditor<unknown> | undefined;
+}
 
 declare module '@json-editor/json-editor' {
   // copy from https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/json-editor/index.d.ts

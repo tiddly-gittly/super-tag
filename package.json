@@ -1,6 +1,7 @@
 {
   "url": "https://github.com/tiddly-gittly/tw-example-plugin",
   "tsFiles": [
+    "src/widgets/utils/initEditor.ts",
     "src/widgets/supertag-form/index.ts",
     "src/widgets/json-editor-form/index.ts"
   ],

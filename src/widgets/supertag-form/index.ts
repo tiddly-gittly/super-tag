@@ -4,7 +4,7 @@ import './spectre-min.scss';
 import 'spectre.css/dist/spectre-icons.css';
 import './style.css';
 import { widget as Widget } from '$:/core/modules/widgets/widget.js';
-import { initEditor } from './initEditor';
+import { initEditor } from '$:/plugins/linonetwo/super-tag/utils/initEditor.js';
 import { formOnChange } from '../utils/formOnChange';
 import { getFullSchemaFromCurrentTiddler } from '../utils/getFullSchema';
 
