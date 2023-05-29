@@ -16,7 +16,7 @@ export function getSuperTagTraits(currentTiddlerTitle: string): ISuperTagData[] 
   if (potentialSuperTags === undefined) return [];
   return potentialSuperTags
     .map((superTagTiddler) => {
-      const { title, tags } = superTagTiddler;
+      const { title, tags = [] } = superTagTiddler;
       const traits = tags
         .map((traitTitle) => {
           const potentialTraitTiddler = $tw.wiki.getTiddler(traitTitle);
