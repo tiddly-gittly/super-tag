@@ -1,0 +1,11 @@
+created: 20230601114910642
+creator: 林一二
+modified: 20230601114933159
+modifier: 林一二
+tags: UserManual
+title: Advanced user - use TraitTag create SuperTag
+type: text/vnd.tiddlywiki
+
+Some plugins you installed to your wiki will provide TraitTag that can be used to create your own SuperTag. Just add one or more TraitTag on a tiddler, this tiddler will become a SuperTag.
+
+<$whiteboard tiddler="HowToCreateSuperTagDiagram" readonly="yes" />

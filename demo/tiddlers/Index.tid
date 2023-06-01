@@ -1,6 +1,6 @@
 created: 20230218072320640
 creator: 林一二
-modified: 20230219091548144
+modified: 20230601115351731
 modifier: 林一二
 title: Index
 type: text/vnd.tiddlywiki
@@ -19,69 +19,8 @@ Also allows developers to use the same set of fields, so their plugins works tog
 
 !! How to use
 
-!!! Normal user - use SuperTag
-
-Some of plugins will provide SuperTag that you can already use, just add these tag to a tiddler, a form will automatically generate on the tiddler view mode.
-
-By simply adding a SuperTag to a tiddler (For example, Task), you will see a form showing in your tiddler (e.g. completed and completeType field editor), see screenshot below:
-
-[img[https://talk.tiddlywiki.org/uploads/default/optimized/2X/1/187e4fb88404427a4f2704e4d1ea07bda6b69653_2_832x750.png]]
-
-The field is only shown if your tiddler already had this field. To edit non-existed field that defined by SuperTag, click " ≡ properties" button to expand the available field editor list:
-
-[img[https://talk.tiddlywiki.org/uploads/default/optimized/2X/e/e26960678985eea0da9f54c43b075ad1c9cd277a_2_1035x621.png]]
-
-See [[Examples]] in this demo site to play around with the auto generated form.
-
-<$whiteboard tiddler="HowToUseSuperTagDiagram" readonly="yes" />
-
-!!! Advanced user - use TraitTag create SuperTag
-
-Some of plugins will provide TraitTag that can be used to create your own SuperTag. Just add one or more TraitTag on a tiddler, this tiddler will become a SuperTag.
-
-<$whiteboard tiddler="HowToCreateSuperTagDiagram" readonly="yes" />
-
-!!! TraitTag developer - create TraitTag 
-
-As a developer, you will want to create your own TraitTag.
-
-A TraitTag has a important field `"schema"`.
-
-<$whiteboard tiddler="HowToCreateTraitTagDiagram" readonly="yes" height="750px" />
-
-* schema: a [[JSON Schema|https://json-schema.org/]] that describe what data a form will receive.
-** You may refer to [[JSON Editor Doc#JSON Schema Support|https://github.com/json-editor/json-editor#json-schema-support]] for advanced features in the form
-** A basic assumption is that the JSON Schema are `type: "object"` and has only 1 level of properties.
-** All properties provided by all trait tags are merged into a single JSON Schema, and then is used to display the SuperTag Form
-
-See links above to learn how to write them. You can also learn from some existed [[TraitTag Examples|$:/SuperTag/TraitTag]].
-
-!!! Plugin developer
-
-If you are creating a plugin that heavily make use of tiddler fields, You'd better search for existed supertag sub-plugins that provides trait tags, or search in [[tiddlywiki forum|https://talk.tiddlywiki.org]] for it.
-
-So you can reuse existed TraitTags. In this way, plugins in our community can work together, make users' tiddlywiki a real unified database.
-
-<$whiteboard tiddler="SuperTagShareTheTraitsDiagram" readonly="yes" height="400px" />
-
-!!! General propose JSON Form Editor
-
-See [[WidgetExamples]] or [[Examples]].
-
-This is only provided as a tool for plugin developers to build custom forms.
-
-For interoperability consideration, it is better to use the TraitTag approach described above, so our TiddlyWiki developer community can have a consistent way to deliver form to end users.
+{{UserManual}}
 
 !! Develop
 
-This is how SuperTag plugin works:
-
-# Auto generated form is displayed in a ViewTemplate that will show on the bottom of the tiddler
-## This ViewTemplate have a `<$list>` widget that conditionally shows the content
-## It shows if the tiddler has a SuperTag, and SuperTag has a TraitTag that tagged with `$:/SuperTag/TraitTag`.
-# A `<$supertag-form />` widget on this ViewTemplate
-## This widget will gather `schema` field on these TraitTags upon running
-## It uses [[eclipsesource/jsonforms|https://github.com/eclipsesource/jsonforms]] open source library to build the form
-## Fill in the form using tiddler's existed data
-
-<$whiteboard tiddler="HowTechnicallySuperTagWorks" readonly="yes" height="900px" />
+[[HowItWorks]]

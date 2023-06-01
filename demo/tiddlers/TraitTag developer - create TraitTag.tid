@@ -1,0 +1,27 @@
+created: 20230601114503385
+creator: 林一二
+modified: 20230601114655643
+modifier: 林一二
+tags: UserManual
+title: TraitTag developer - create TraitTag
+type: text/vnd.tiddlywiki
+
+As a developer, you will want to create your own TraitTag.
+
+A TraitTag has a important field `"schema"`.
+
+<$whiteboard tiddler="HowToCreateTraitTagDiagram" readonly="yes" height="750px" />
+
+* schema: a [[JSON Schema|https://json-schema.org/]] that describe what data a form will receive.
+** You may refer to [[JSON Editor Doc#JSON Schema Support|https://github.com/json-editor/json-editor#json-schema-support]] for advanced features in the form
+** A basic assumption is that the JSON Schema are `type: "object"` and has only 1 level of properties.
+** All properties provided by all trait tags are merged into a single JSON Schema, and then is used to display the SuperTag Form
+
+See links above to learn how to write them. You can also learn from some existed [[TraitTag Examples|$:/SuperTag/TraitTag]].
+
+* Online free JSONSchema editors
+** [ext[bjdash/JSON-Schema-Builder|https://bjdash.github.io/JSON-Schema-Builder/]]
+** [ext[hellosean1025/json-schema-visual-editor|https://hellosean1025.github.io/json-schema-visual-editor/]]
+
+* Tiddlywiki plugins useful in creating TraitTag tiddlers
+** [[wikilabs/field-editor - Side by side multiline field editor|https://tw-cpl.netlify.app/#Plugin_202203243721287]]
