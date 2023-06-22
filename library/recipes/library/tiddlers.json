@@ -1,0 +1,16 @@
+[
+    {
+        "author": "LinOnetwo",
+        "core-version": ">=5.1.22",
+        "dependents": "",
+        "description": "Auto generate input form on a tiddler by simply adding a SuperTag to it. Create a SuperTag by compositing existing TraitTags.",
+        "list": "readme",
+        "plugin-type": "plugin",
+        "title": "$:/plugins/linonetwo/super-tag",
+        "type": "application/json",
+        "version": "0.1.3",
+        "Modern.TiddlyDev#SHA256-Hashed": "f9550a1b9a38de12a4bd25aeaf783035ee3f10fdc9638f5c5b3c73b0b35d0ebb",
+        "readme": "See following resources to learn how to use:\n\n* \"Talk\" forum post [[SuperTag plugin, auto-generate a field editor on view template|https://talk.tiddlywiki.org/t/supertag-plugin-auto-generate-a-field-editor-on-view-template/6245]]\n* Demo site [SuperTag plugin's demo site](https://tiddly-gittly.github.io/super-tag/)\n* Github: https://github.com/tiddly-gittly/super-tag",
+        "requires-reload": "yes"
+    }
+]
