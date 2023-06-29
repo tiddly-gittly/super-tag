@@ -6,6 +6,28 @@ tags: UserManual
 title: Normal user - use SuperTag
 type: text/vnd.tiddlywiki
 
+<$list filter="[[$:/language]get[text]removeprefix[$:/languages/]else[en-GB]]" variable="lang">
+
+	<$list filter="[<lang>search[zh]]">
+
+一些插件会提供你已经可以使用的超级标签，只要把这些标签添加到条目中，一个表单就会在条目下自动生成。
+
+通过简单地添加SuperTag到条目上（例如，任务），你会看到一个表单显示在你的条目（例如，完成和完成类型的字段编辑器），见下面的截图：
+
+[img[https://talk.tiddlywiki.org/uploads/default/optimized/2X/1/187e4fb88404427a4f2704e4d1ea07bda6b69653_2_832x750.png]]
+
+这个字段只有在你的条目已经有这个字段时才会显示。要编辑由SuperTag定义的不存在的字段，请点击"≡属性 "按钮来扩展可用的字段编辑器列表：
+
+[img[https://talk.tiddlywiki.org/uploads/default/optimized/2X/e/e26960678985eea0da9f54c43b075ad1c9cd277a_2_1035x621.png]]
+
+请参阅本演示网站中的[[示例|Examples]]来玩玩自动生成的表单。
+
+<$whiteboard tiddler="HowToUseSuperTagDiagram" readonly="yes" />
+
+	</$list>
+
+	<$list filter="[<lang>!search[zh]]">
+
 Some of plugins will provide SuperTag that you can already use, just add these tag to a tiddler, a form will automatically generate on the tiddler view mode.
 
 By simply adding a SuperTag to a tiddler (For example, Task), you will see a form showing in your tiddler (e.g. completed and completeType field editor), see screenshot below:
@@ -19,3 +41,7 @@ The field is only shown if your tiddler already had this field. To edit non-exis
 See [[Examples]] in this demo site to play around with the auto generated form.
 
 <$whiteboard tiddler="HowToUseSuperTagDiagram" readonly="yes" />
+
+	</$list>
+
+</$list>

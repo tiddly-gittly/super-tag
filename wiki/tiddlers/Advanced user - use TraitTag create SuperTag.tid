@@ -6,6 +6,134 @@ tags: UserManual
 title: Advanced user - use TraitTag create SuperTag
 type: text/vnd.tiddlywiki
 
+<$list filter="[[$:/language]get[text]removeprefix[$:/languages/]else[en-GB]]" variable="lang">
+
+	<$list filter="[<lang>search[zh]]">
+
+你安装在你的wiki上的一些插件会提供TraitTag，可以用来创建你自己的SuperTag。只要在一个条目上添加一个或多个TraitTag，这个条目就会成为一个SuperTag。
+
+<$whiteboard tiddler="HowToCreateSuperTagDiagram" readonly="yes" />
+
+如果想要自定义表单的话，按照下面步骤
+
+* 新建一个条目，建议以`$:/TraitTag`为前缀，类似`$:/TraitTag/xxx`，后面接上自定义的英文名，但不这样做也是可以的。
+* 并加上标签`$:/SuperTag/TraitTag`，这是一定要的。
+* 添加`schema`字段，这是一定要的。
+** `schema`字段的内容需要参照以下格式
+* 再新建一个条目，加上`$:/TraitTag/xxx`标签。其他条目添加了此条目作为标签就会自动在正文下面生成一个表单，表单内容由`$:/TraitTag/xxx`条目里的`schema`字段定义。
+** 这就意味着，一个条目可以加上多个`$:/TraitTag/xxx`标签，从而实现多个表单组合在一起。假如一个表单包含了“姓名、性别、年龄”，而另一个表单则包含了“职位、薪资”，那么只要同时添加这两个标签，就可以把这两个表单组合在一起，而不会生成两个表单的选项。非常智能。同时也可以多样化组织不同表单。
+
+```
+{
+  "type": "object",
+  "properties": {
+    "completed": {
+      "type": "boolean"
+    },
+    "completeType": {
+      "type": "string",
+      "enum": ["Delay", "AtTime", "InAdvance"]
+    },
+    "completedCount": {
+      "type": "number"
+    }
+  },
+  "required": ["completed"]
+}
+```
+
+开头是一个花括号，里面有type和properties和required三个内容。type表明这是一个object对象内容。properties则是一些字段名称和对应的字段值。required是需要填写的。但只有新建条目时，同时确定了字段内容，才会在下面显示表单。类似下面代码里action-createtiddler中明确添加字段tmo_taskState和其值New，就会自动显示出表单来了。
+
+```
+<$button>
+    <$action-createtiddler
+      tags={{{ [{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}addsuffix[ ]addsuffix<currentTiddler>] }}}
+      tmo_taskState="New"
+    >
+      <$action-sendmessage $message="tm-edit-tiddler" $param=<<createTiddler-title>>/>
+    </$action-createtiddler>
+    {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Task}} 新任务
+  </$button>
+```
+
+properties里的值是`"completed": {"type": "boolean"},`的形式，字段名称用英文引号括起来，接着是一个英文冒号，然后是花括号，里面有写type属性，上面代码里是一个布尔值，显示在表单中的就会是true或false。常见的type值还有string字符串，number数字等。后面接一个英文的逗号，如果是最后一个就不用再写逗号了。如果选项是字符串类型，然后值是数组可供选择，那么可以采用enum，后面接一个中括号，值用英文引号括起来。
+
+里面的内容可以有title、description、type、format等。type类型有string字符串、number数字、array数组、object对象、boolean布尔类型、integer整数类型。其中number和integer可以有最大值和最小值控制。在properties字段名称里与type同一层级的还有format，format可以是`color`颜色，也可以是`date`日期值，还可以是`email`邮件格式等。结合type和format可以实现大部分表单功能。具体可以通过[[JSON Schema|https://json-schema.org/]]文档来学习，或者从[[TraitTag Examples|$:/SuperTag/TraitTag]]示例中学习。schema可以嵌套数据，但因为在tiddlywiki里，没有字段层级可以嵌套，所以也没有去介绍嵌套数据的格式。
+
+schema是以json的格式保存数据，格式非常严格，写错了逗号，漏写了逗号，或者写错了分号，漏写了分号都会出错，不能正常显示。你可以借助下面的网址来更好地编辑或者在vs code等代码编辑器里打开，因为会有自动检查和自动格式化，能够很好地提示问题。
+
+* 在线免费JSONchema编辑器
+** [ext[bjdash/JSON-Schema-Builder|https://bjdash.github.io/JSON-Schema-Builder/]]
+** [ext[hellosean1025/json-schema-visual-editor|https://hellosean1025.github.io/json-schema-visual-editor/]]
+
+* 在创建TraitTag tiddlers时有用的Tiddlywiki插件
+** [[wikilabs/field-editor - Side by side multiline field editor|https://tw-cpl.netlify.app/#Plugin_202203243721287]]
+
+
+
+	</$list>
+
+	<$list filter="[<lang>!search[zh]]">
+
 Some plugins you installed to your wiki will provide TraitTag that can be used to create your own SuperTag. Just add one or more TraitTag on a tiddler, this tiddler will become a SuperTag.
 
 <$whiteboard tiddler="HowToCreateSuperTagDiagram" readonly="yes" />
+
+If you want to customise the form, follow these steps
+
+* Create a new entry, it is recommended to prefix it with `$:/TraitTag`, something like `$:/TraitTag/xxx`, followed by the custom English name, but it is fine not to do so.
+* And add the tag `$:/SuperTag/TraitTag`, this is a must.
+* Add the `schema` field, which is a must.
+** The content of the `schema` field needs to refer to the following format
+* Another new entry with the tag `$:/TraitTag/xxx`. Other entries that add this entry as a tag will automatically generate a form below the body, with the contents of the form defined by the `schema` field in the `$:/TraitTag/xxx` entry.
+** This means that multiple forms can be combined by adding multiple `$:/TraitTag/xxx` tags to a single entry. If one form contains `Name, Gender, Age` and another form contains `Position, Salary`, then by adding both tags you can combine the two forms together without generating options for both forms. Very smart. It is also possible to organise a wide range of different forms.
+
+```
+{
+  "type": "object",
+  "properties": {
+    "completed": {
+      "type": "boolean"
+    },
+    "completeType": {
+      "type": "string",
+      "enum": ["Delay", "AtTime", "InAdvance"]
+    },
+    "completedCount": {
+      "type": "number"
+    }
+  },
+  "required": ["completed"]
+}
+```
+
+It starts with a bracket and contains type and properties and required. type indicates that it is the content of an object, properties is the name of a field and the corresponding field value, and required is required. However, the form will only be displayed below if the field content is determined when the new entry is created. If you explicitly add the field tmo_taskState and its value New to the action-createtiddler in the code below, the form will be displayed automatically.
+
+```
+<$button>
+    <$action-createtiddler
+      tags={{{ [{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}addsuffix[ ]addsuffix<currentTiddler>] }}}
+      tmo_taskState="New"
+    >
+      <$action-sendmessage $message="tm-edit-tiddler" $param=<<createTiddler-title>>/>
+    </$action-createtiddler>
+    {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Task}} 新任务
+  </$button>
+```
+
+The value in properties is of the form `"completed": {"type": "boolean"},` with the field name enclosed in inverted commas, followed by a colon and then brackets with the type property written inside, which is a boolean value in the code above and will be displayed in the form as true or false. string, number and so on. This is followed by a comma in English, if it is the last one you don't need to write a comma again. If the option is a string type and then the value is an array available, then enum can be used, followed by a bracket and the value enclosed in English inverted commas.
+
+The content inside can have title, description, type, format, etc.The type types are string, number, array, object, boolean, integer and integer. The number and integer types can have maximum and minimum value controls. At the same level as type in the properties field name is format, which can be `color` colour, `date` date value, `email` email format, etc. The combination of type and format allows for most form functionality. This can be learnt from the [[JSON Schema|https://json-schema.org/]] documentation or from the [[TraitTag Examples|$:/SuperTag/TraitTag]] examples. schema can nest data, but because of the tiddlywiki there is no field levels that can be nested, so the format of nested data is not covered either.
+
+The schema saves data in json format and the format is very strict, writing a wrong comma, missing a comma or writing a wrong semicolon or missing a semicolon will result in errors and will not display properly. You can edit it better with the help of the following URL or open it in a code editor such as VS Code, as there will be automatic checking and automatic formatting that will give a good indication of the problem.
+
+* Online free JSONSchema editors
+** [ext[bjdash/JSON-Schema-Builder|https://bjdash.github.io/JSON-Schema-Builder/]]
+** [ext[hellosean1025/json-schema-visual-editor|https://hellosean1025.github.io/json-schema-visual-editor/]]
+
+* Tiddlywiki plugins useful in creating TraitTag tiddlers
+** [[wikilabs/field-editor - Side by side multiline field editor|https://tw-cpl.netlify.app/#Plugin_202203243721287]]
+
+	</$list>
+
+</$list>

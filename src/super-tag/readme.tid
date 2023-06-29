@@ -2,8 +2,26 @@ title: $:/plugins/linonetwo/super-tag/readme
 creator: LinOnetwo
 type: text/vnd.tiddlywiki
 
+<$list filter="[[$:/language]get[text]removeprefix[$:/languages/]else[en-GB]]" variable="lang">
+
+	<$list filter="[<lang>search[zh]]">
+
+请参阅以下资源，了解如何使用：
+
+* 论坛帖子[[SuperTag插件，在视图模板上自动生成一个字段编辑器|https://talk.tiddlywiki.org/t/supertag-plugin-auto-generate-a-field-editor-on-view-template/6245]]
+* 演示网站 [[SuperTag插件的演示网站|https://tiddly-gittly.github.io/super-tag/]]
+* Github: https://github.com/tiddly-gittly/super-tag
+
+	</$list>
+
+	<$list filter="[<lang>!search[zh]]">
+
 See following resources to learn how to use:
 
 * "Talk" forum post [[SuperTag plugin, auto-generate a field editor on view template|https://talk.tiddlywiki.org/t/supertag-plugin-auto-generate-a-field-editor-on-view-template/6245]]
-* Demo site [SuperTag plugin's demo site](https://tiddly-gittly.github.io/super-tag/)
+* Demo site [[SuperTag plugin's demo site|https://tiddly-gittly.github.io/super-tag/]]
 * Github: https://github.com/tiddly-gittly/super-tag
+
+	</$list>
+
+</$list>

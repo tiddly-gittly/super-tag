@@ -7,6 +7,25 @@ title: MyExampleTask
 type: text/vnd.tiddlywiki
 completed: true
 
+<$list filter="[[$:/language]get[text]removeprefix[$:/languages/]else[en-GB]]" variable="lang">
+
+	<$list filter="[<lang>search[zh]]">
+
+点击这个，就会出现一个新的输入：
+
+<$button>
+  更新完成计数
+  <$action-setfield tiddler=<<currentTiddler>> completedCount="1" />
+</$button>
+
+因为在默认情况下，它只显示已经有值的字段。
+
+如果你想让更多的字段输入显示出来，请点击" ≡ 属性"按钮来扩展可用的字段编辑器列表： (如[[Readme|Index]]中讲到的)
+
+	</$list>
+
+	<$list filter="[<lang>!search[zh]]">
+
 Click on this, and a new input will show up:
 
 <$button>
@@ -17,3 +36,7 @@ Click on this, and a new input will show up:
 Because by default it only shows fields that already has value.
 
 If you want more field inputs to show up, click " ≡ properties" button to expand the available field editor list: (as taught in the [[Readme|Index]])
+
+	</$list>
+
+</$list>
