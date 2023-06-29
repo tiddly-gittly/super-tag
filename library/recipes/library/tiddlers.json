@@ -9,8 +9,8 @@
         "title": "$:/plugins/linonetwo/super-tag",
         "type": "application/json",
         "version": "0.1.3",
-        "Modern.TiddlyDev#SHA256-Hashed": "f9550a1b9a38de12a4bd25aeaf783035ee3f10fdc9638f5c5b3c73b0b35d0ebb",
-        "readme": "See following resources to learn how to use:\n\n* \"Talk\" forum post [[SuperTag plugin, auto-generate a field editor on view template|https://talk.tiddlywiki.org/t/supertag-plugin-auto-generate-a-field-editor-on-view-template/6245]]\n* Demo site [SuperTag plugin's demo site](https://tiddly-gittly.github.io/super-tag/)\n* Github: https://github.com/tiddly-gittly/super-tag",
+        "Modern.TiddlyDev#SHA256-Hashed": "08c5b027cd7974157b4c06915cb190c4c36b39b9825ad856fc6fae33a5d9cb50",
+        "readme": "<$list filter=\"[[$:/language]get[text]removeprefix[$:/languages/]else[en-GB]]\" variable=\"lang\">\n\n\t<$list filter=\"[<lang>search[zh]]\">\n\n请参阅以下资源，了解如何使用：\n\n* 论坛帖子[[SuperTag插件，在视图模板上自动生成一个字段编辑器|https://talk.tiddlywiki.org/t/supertag-plugin-auto-generate-a-field-editor-on-view-template/6245]]\n* 演示网站 [[SuperTag插件的演示网站|https://tiddly-gittly.github.io/super-tag/]]\n* Github: https://github.com/tiddly-gittly/super-tag\n\n\t</$list>\n\n\t<$list filter=\"[<lang>!search[zh]]\">\n\nSee following resources to learn how to use:\n\n* \"Talk\" forum post [[SuperTag plugin, auto-generate a field editor on view template|https://talk.tiddlywiki.org/t/supertag-plugin-auto-generate-a-field-editor-on-view-template/6245]]\n* Demo site [[SuperTag plugin's demo site|https://tiddly-gittly.github.io/super-tag/]]\n* Github: https://github.com/tiddly-gittly/super-tag\n\n\t</$list>\n\n</$list>",
         "requires-reload": "yes"
     }
 ]

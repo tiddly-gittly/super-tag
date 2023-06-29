@@ -1,1 +1,122 @@
-<!doctypehtml>  <head> <meta content="text/html;charset=utf-8"http-equiv=Content-Type> <meta content="TiddlyWiki Plugin Library"name=application-name> <meta content=v0.0.0 name=application-version> <meta content="Copyright 2015 Jeremy Ruston"name=copyright> <link href=favicon.ico id=faviconLink rel="shortcut icon"> <title>Plugin Library</title> <script>var assetList=[{author:"LinOnetwo","core-version":">=5.1.22",dependents:"",description:"Auto generate input form on a tiddler by simply adding a SuperTag to it. Create a SuperTag by compositing existing TraitTags.",list:"readme","plugin-type":"plugin",title:"$:/plugins/linonetwo/super-tag",type:"application/json",version:"0.1.3","Modern.TiddlyDev#SHA256-Hashed":"f9550a1b9a38de12a4bd25aeaf783035ee3f10fdc9638f5c5b3c73b0b35d0ebb",readme:'See following resources to learn how to use:\n\n* "Talk" forum post [[SuperTag plugin, auto-generate a field editor on view template|https://talk.tiddlywiki.org/t/supertag-plugin-auto-generate-a-field-editor-on-view-template/6245]]\n* Demo site [SuperTag plugin\'s demo site](https://tiddly-gittly.github.io/super-tag/)\n* Github: https://github.com/tiddly-gittly/super-tag',"requires-reload":"yes"}];!function(){"use strict";window.addEventListener("message",(function(e){if(console.log("plugin library: Received message from",e.origin),console.log("plugin library: Message content",e.data),"GET"===e.data.verb)if("recipes/library/tiddlers.json"===e.data.url)e.source.postMessage({verb:"GET-RESPONSE",status:"200",cookies:e.data.cookies,url:e.data.url,type:"application/json",body:JSON.stringify(assetList,null,4)},"*");else if(0===e.data.url.indexOf("recipes/library/tiddlers/")){!function(e,t){var a=new XMLHttpRequest;a.open("GET",e,!0),a.onreadystatechange=function(){4==a.readyState&&200==a.status&&t(null,a.responseText)},a.send()}("recipes/library/tiddlers/"+encodeURIComponent((t=e.data.url,a="recipes/library/tiddlers/",0===t.indexOf(a)?t.substr(a.length):t)),(function(t,a){t?e.source.postMessage({verb:"GET-RESPONSE",status:"404",cookies:e.data.cookies,url:e.data.url,type:"text/plain",body:"Not found"},"*"):e.source.postMessage({verb:"GET-RESPONSE",status:"200",cookies:e.data.cookies,url:e.data.url,type:"application/json",body:a},"*")}))}else e.source.postMessage({verb:"GET-RESPONSE",status:"404",cookies:e.data.cookies,url:e.data.url,type:"text/plain",body:"Not found"},"*");var t,a}),!1)}()</script> </head> <h1>HelloThere</h1><p>This is the TiddlyWiki plugin library. It is not intended to be opened directly in the browser.<p>See <a href=https://tiddlywiki.com/ target=_blank>https://tiddlywiki.com/</a> for details of how to install plugins. 
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="application-name" content="TiddlyWiki Plugin Library" />
+<meta name="application-version" content="v0.0.0" />
+<meta name="copyright" content="Copyright 2015 Jeremy Ruston" />
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<title>Plugin Library</title>
+<script>
+var assetList = [
+    {
+        "author": "LinOnetwo",
+        "core-version": ">=5.1.22",
+        "dependents": "",
+        "description": "Auto generate input form on a tiddler by simply adding a SuperTag to it. Create a SuperTag by compositing existing TraitTags.",
+        "list": "readme",
+        "plugin-type": "plugin",
+        "title": "$:/plugins/linonetwo/super-tag",
+        "type": "application/json",
+        "version": "0.1.3",
+        "Modern.TiddlyDev#SHA256-Hashed": "08c5b027cd7974157b4c06915cb190c4c36b39b9825ad856fc6fae33a5d9cb50",
+        "readme": "<$list filter=\"[[$:/language]get[text]removeprefix[$:/languages/]else[en-GB]]\" variable=\"lang\">\n\n\t<$list filter=\"[<lang>search[zh]]\">\n\n请参阅以下资源，了解如何使用：\n\n* 论坛帖子[[SuperTag插件，在视图模板上自动生成一个字段编辑器|https://talk.tiddlywiki.org/t/supertag-plugin-auto-generate-a-field-editor-on-view-template/6245]]\n* 演示网站 [[SuperTag插件的演示网站|https://tiddly-gittly.github.io/super-tag/]]\n* Github: https://github.com/tiddly-gittly/super-tag\n\n\t</$list>\n\n\t<$list filter=\"[<lang>!search[zh]]\">\n\nSee following resources to learn how to use:\n\n* \"Talk\" forum post [[SuperTag plugin, auto-generate a field editor on view template|https://talk.tiddlywiki.org/t/supertag-plugin-auto-generate-a-field-editor-on-view-template/6245]]\n* Demo site [[SuperTag plugin's demo site|https://tiddly-gittly.github.io/super-tag/]]\n* Github: https://github.com/tiddly-gittly/super-tag\n\n\t</$list>\n\n</$list>",
+        "requires-reload": "yes"
+    }
+];
+
+/*\
+title: $:/plugins/tiddlywiki/pluginlibrary/libraryserver.js
+type: application/javascript
+module-type: library
+
+A simple HTTP-over-window.postMessage implementation of a standard TiddlyWeb-compatible server. It uses real HTTP to load the individual tiddler JSON files.
+
+\*/
+(function(){
+
+/*jslint node: true, browser: true */
+/*global $tw: false */
+"use strict";
+
+// Listen for window messages
+window.addEventListener("message",function listener(event){
+	console.log("plugin library: Received message from",event.origin);
+	console.log("plugin library: Message content",event.data);
+	switch(event.data.verb) {
+		case "GET":
+			if(event.data.url === "recipes/library/tiddlers.json") {
+				// Route for recipes/library/tiddlers.json
+				event.source.postMessage({
+					verb: "GET-RESPONSE",
+					status: "200",
+					cookies: event.data.cookies,
+					url: event.data.url,
+					type: "application/json",
+					body: JSON.stringify(assetList,null,4)
+				},"*");
+			} else if(event.data.url.indexOf("recipes/library/tiddlers/") === 0) {
+				var url = "recipes/library/tiddlers/" + encodeURIComponent(removePrefix(event.data.url,"recipes/library/tiddlers/"));
+				// Route for recipes/library/tiddlers/<uri-encoded-tiddler-title>.json
+				httpGet(url,function(err,responseText) {
+					if(err) {
+						event.source.postMessage({
+							verb: "GET-RESPONSE",
+							status: "404",
+							cookies: event.data.cookies,
+							url: event.data.url,
+							type: "text/plain",
+							body: "Not found"
+						},"*");
+					} else {
+						event.source.postMessage({
+							verb: "GET-RESPONSE",
+							status: "200",
+							cookies: event.data.cookies,
+							url: event.data.url,
+							type: "application/json",
+							body: responseText
+						},"*");
+					}
+				});
+			} else {
+				event.source.postMessage({
+					verb: "GET-RESPONSE",
+					status: "404",
+					cookies: event.data.cookies,
+					url: event.data.url,
+					type: "text/plain",
+					body: "Not found"
+				},"*");
+			}
+			break;
+	}
+},false);
+
+// Helper to remove string prefixes
+function removePrefix(string,prefix) {
+	if(string.indexOf(prefix) === 0) {
+		return string.substr(prefix.length);
+	} else {
+		return string;
+	}
+}
+
+// Helper for HTTP GET
+function httpGet(url,callback) {
+	var http = new XMLHttpRequest();
+	http.open("GET",url,true);
+	http.onreadystatechange = function() {
+		if(http.readyState == 4 && http.status == 200) {
+			callback(null,http.responseText);
+		}
+	};
+	http.send();
+}
+
+})();
+
+</script>
+</head>
+<body><h1>HelloThere</h1><p>This is the TiddlyWiki plugin library. It is not intended to be opened directly in the browser.</p><p>See <a href="https://tiddlywiki.com/" target="_blank">https://tiddlywiki.com/</a> for details of how to install plugins.</p></body>
+</html>
