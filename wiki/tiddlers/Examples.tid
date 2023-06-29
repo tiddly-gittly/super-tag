@@ -6,6 +6,36 @@ tags: Index
 title: Examples
 type: text/vnd.tiddlywiki
 
+<$list filter="[[$:/language]get[text]removeprefix[$:/languages/]else[en-GB]]" variable="lang">
+
+	<$list filter="[<lang>search[zh]]">
+
+!! 超级标签
+
+!!! 任务
+
+[[Task]]是一个超级标签，[[任务|MyExampleTask]]是一个普通的条目，添加了这个超级标签。
+
+[[$:/TraitTag/ActionState]]和[[$:/TraitTag/Priority]]是添加到它的示例TraitTag。
+
+!!! 计数器
+
+[[ColorAndCounter]]是一个超级标签，有[[$:/TraitTag/Count]]和[[$:/TraitTag/Color]]两个特性标签。
+
+!! 特质标签
+
+详见[[$:/SuperTag/TraitTag]]。
+
+!! 小工具
+
+[[WidgetExamples]]
+
+{{WidgetExamples}}。
+
+	</$list>
+
+	<$list filter="[<lang>!search[zh]]">
+
 !! SuperTag
 
 !!! Task
@@ -27,3 +57,7 @@ See [[$:/SuperTag/TraitTag]] for details.
 [[WidgetExamples]]
 
 {{WidgetExamples}}
+
+	</$list>
+
+</$list>

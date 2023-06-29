@@ -1,3 +1,5 @@
+[English](/README.md) | [中文](/README_zh-CN.md)
+
 # SuperTag plugin for TiddlyWiki5
 
 Auto generate input form on a tiddler by simply adding a SuperTag to it. Create a SuperTag by compositing existing TraitTags.

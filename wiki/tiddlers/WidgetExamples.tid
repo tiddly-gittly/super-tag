@@ -6,6 +6,42 @@ tags: Examples
 title: WidgetExamples
 type: text/vnd.tiddlywiki
 
+<$list filter="[[$:/language]get[text]removeprefix[$:/languages/]else[en-GB]]" variable="lang">
+
+	<$list filter="[<lang>search[zh]]">
+
+!! 一般建议JSON表格编辑器部件的使用
+
+我们还提供了一个小工具，可以根据一个过滤器渲染一个表单，其输出是一个JSON Schema的列表：
+
+`<$json-editor-form filter="[all[current]tags[]tags[]] :filter[tags[]match[$:/SuperTag/TraitTag]] :and[get[schema]] " tiddler=<<currentTiddler>> />`
+
+上述小组件的用法将产生与`<$supertag-form />`完全相同的输出，正如[[talk论坛帖子|https://talk.tiddlywiki.org/t/supertag-plugin-auto-generate-a-field-editor-on-view-template/6245/2?u=linonetwo]]中建议的那样。
+
+下面是一些更多的例子：
+
+!!! 根据当前tiddler的模式字段来渲染一个表单
+
+`tiddler`参数默认为`<<currentTiddler>>`，所以可以省略。
+
+`<$json-editor-form filter="[all[current]get[schema]]" />`
+
+在[[ExampleSchemaRendering]]中试用。
+
+!!! 渲染一个表单来控制其他的tiddler
+
+我们可以使用这个部件来控制[[ExampleSchemaRendering]]tiddler上的`color`字段，也可以使用它的`schema`字段。
+
+`<$json-editor-form filter="[[ExampleSchemaRendering]get[schema]]" tiddler=ExampleSchemaRendering />`。
+
+<$json-editor-form filter="[[ExampleSchemaRendering]get[schema]]" tiddler=ExampleSchemaRendering />
+
+<<tag ExampleSchemaRendering>>。
+
+	</$list>
+
+	<$list filter="[<lang>!search[zh]]">
+
 !! General propose JSON Form Editor Widget usage
 
 We also provides a widget that can render a form based on a filter whose output is a list of JSON Schema:
@@ -33,3 +69,7 @@ We can use this widget to control the `color` field on [[ExampleSchemaRendering]
 <$json-editor-form filter="[[ExampleSchemaRendering]get[schema]]" tiddler=ExampleSchemaRendering />
 
 <<tag ExampleSchemaRendering>>
+
+	</$list>
+
+</$list>
