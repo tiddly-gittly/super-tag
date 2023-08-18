@@ -26,6 +26,8 @@ type: text/vnd.tiddlywiki
 * 在线免费JSONchema编辑器
 ** [ext[bjdash/JSON-Schema-Builder|https://bjdash.github.io/JSON-Schema-Builder/]]
 ** [ext[hellosean1025/json-schema-visual-editor|https://hellosean1025.github.io/json-schema-visual-editor/]]
+* 将生成的JSONSchema序列化的工具
+** [ext[json-stringify-online|https://jsonformatter.org/json-stringify-online]]
 
 * 在创建TraitTag tiddlers时有用的Tiddlywiki插件
 ** [[wikilabs/field-editor - Side by side multiline field editor|https://tw-cpl.netlify.app/#Plugin_202203243721287]]
@@ -50,6 +52,8 @@ See links above to learn how to write them. You can also learn from some existed
 * Online free JSONSchema editors
 ** [ext[bjdash/JSON-Schema-Builder|https://bjdash.github.io/JSON-Schema-Builder/]]
 ** [ext[hellosean1025/json-schema-visual-editor|https://hellosean1025.github.io/json-schema-visual-editor/]]
+* Tools to serialize the generated JSONSchema
+** [ext[json-stringify-online|https://jsonformatter.org/json-stringify-online]]
 
 * Tiddlywiki plugins useful in creating TraitTag tiddlers
 ** [[wikilabs/field-editor - Side by side multiline field editor|https://tw-cpl.netlify.app/#Plugin_202203243721287]]
