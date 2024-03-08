@@ -4,11 +4,11 @@ title: language/zh-Hans/Normal user - use SuperTag
 
 通过简单地添加超级标签到条目上（例如，任务），你会看到一个表单显示在你的条目（例如，完成和完成类型的字段编辑器），见下面的截图：
 
-[img[https://talk.tiddlywiki.org/uploads/default/optimized/2X/1/187e4fb88404427a4f2704e4d1ea07bda6b69653_2_832x750.png]]
+[img[Screenshot - Form.png]]
 
 这个字段只有在你的条目已经有这个字段时才会显示。要编辑由超级标签定义的不存在的字段，请点击「 ≡ properties」按钮来扩展可用的字段编辑器列表：
 
-[img[https://talk.tiddlywiki.org/uploads/default/optimized/2X/e/e26960678985eea0da9f54c43b075ad1c9cd277a_2_1035x621.png]]
+[img[Screenshot - properties.png]]
 
 请参阅本演示网站中的[[示例|Examples]]来玩玩自动生成的表单。
 
