@@ -8,4 +8,4 @@ caption: <<lingo Caption/TraitTagDeveloperCreateTraitTag language/>>
 
 \define lingo-base() language/
 
-<<lingo UserManual>>
+<<lingo "TraitTag developer - create TraitTag">>

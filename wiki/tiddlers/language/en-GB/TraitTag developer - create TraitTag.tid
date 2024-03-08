@@ -25,12 +25,10 @@ See links above to learn how to write them. You can also learn from some existed
 
 If you want to customise the form, follow these steps
 
-* Create a new entry, it is recommended to prefix it with `$:/TraitTag`, something like `$:/TraitTag/xxx`, followed by the custom English name, but it is fine not to do so.
+* Create a new tiddler, it is recommended to prefix it with `$:/TraitTag`, something like `$:/TraitTag/xxx`, followed by the custom English name, but it is fine not to do so.
 * And add the tag `$:/SuperTag/TraitTag`, this is a must.
 * Add the `schema` field, which is a must.
 ** The content of the `schema` field needs to refer to the following format
-* Another new entry with the tag `$:/TraitTag/xxx`. Other entries that add this entry as a tag will automatically generate a form below the body, with the contents of the form defined by the `schema` field in the `$:/TraitTag/xxx` entry.
-** This means that multiple forms can be combined by adding multiple `$:/TraitTag/xxx` tags to a single entry. If one form contains `Name, Gender, Age` and another form contains `Position, Salary`, then by adding both tags you can combine the two forms together without generating options for both forms. Very smart. It is also possible to organise a wide range of different forms.
 
 ```
 {
@@ -51,7 +49,7 @@ If you want to customise the form, follow these steps
 }
 ```
 
-It starts with a bracket and contains type and properties and required. type indicates that it is the content of an object, properties is the name of a field and the corresponding field value, and required is required. However, the form will only be displayed below if the field content is determined when the new entry is created. If you explicitly add the field tmo_taskState and its value New to the action-createtiddler in the code below, the form will be displayed automatically.
+It starts with a bracket and contains type and properties and required. type indicates that it is the content of an object, properties is the name of a field and the corresponding field value, and required is required. However, the form will only be displayed below if the field content is determined when the new tiddler is created. If you explicitly add the field tmo_taskState and its value New to the action-createtiddler in the code below, the form will be displayed automatically.
 
 ```
 <$button>
