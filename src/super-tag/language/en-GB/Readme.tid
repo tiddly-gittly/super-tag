@@ -1,0 +1,14 @@
+title: $:/plugins/linonetwo/super-tag/language/en-GB/Readme
+
+\define lingo-base() $:/plugins/linonetwo/super-tag/language/
+
+! <<lingo Name>>
+
+<<lingo Description>>
+
+
+See following resources to learn how to use:
+
+* "Talk" forum post [[SuperTag plugin, auto-generate a field editor on view template|https://talk.tiddlywiki.org/t/supertag-plugin-auto-generate-a-field-editor-on-view-template/6245]]
+* Demo site [[SuperTag plugin's demo site|https://tiddly-gittly.github.io/super-tag/]]
+* Github: [[https://github.com/tiddly-gittly/super-tag]]

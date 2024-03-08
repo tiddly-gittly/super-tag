@@ -1,0 +1,6 @@
+title: $:/plugins/linonetwo/super-tag/language/en-GB/
+
+Name: SuperTag
+Description: Auto generate input form on a tiddler by simply adding a SuperTag to it. Create a SuperTag by compositing existing TraitTags.
+PluginConfigs: Plugin Configs
+ConfigDescription: These settings let you customise the behaviour of SuperTag plugin.

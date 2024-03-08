@@ -1,0 +1,11 @@
+title: $:/plugins/linonetwo/super-tag/config
+tags: $:/tags/ControlPanel/SettingsTab
+caption: <<lingo "Name" "$:/plugins/linonetwo/super-tag/language/">>
+
+\define lingo-base() $:/plugins/linonetwo/super-tag/language/
+
+<<lingo ConfigDescription>>
+
+---
+
+!! <<lingo PluginConfigs>>

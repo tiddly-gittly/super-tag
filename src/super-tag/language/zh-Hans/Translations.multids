@@ -1,0 +1,6 @@
+title: $:/plugins/linonetwo/super-tag/language/zh-Hans/
+
+Name: 超级标签
+Description: 只需在条目上添加一个超级标签，就能自动生成输入表单。通过合成现有的特性标签来创建超级标签。
+PluginConfigs: 插件设置
+ConfigDescription: 通过这些设置，您可以自定义「超级标签」插件的行为。
