@@ -1,3 +1,4 @@
+completed: true
 created: 20230218103715583
 creator: 林一二
 modified: 20230218103716732
@@ -5,7 +6,6 @@ modifier: 林一二
 tags: Task ColorAndCounter
 title: MyExampleTask
 type: text/vnd.tiddlywiki
-completed: true
 
 <$list filter="[[$:/language]get[text]removeprefix[$:/languages/]else[en-GB]]" variable="lang">
 
