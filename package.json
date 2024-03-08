@@ -12,7 +12,8 @@
     "build": "npm run clean && tiddlywiki-plugin-dev build",
     "build:library": "npm run clean && tiddlywiki-plugin-dev build --library --output dist/library",
     "publish": "npm run clean && tiddlywiki-plugin-dev publish",
-    "publish:offline": "npm run clean && tiddlywiki-plugin-dev publish --offline"
+    "publish:offline": "npm run clean && tiddlywiki-plugin-dev publish --offline",
+    "postinstall": "sass-migrator division node_modules/spectre.css/src/*.scss"
   },
   "engines": {
     "node": ">=16"
@@ -31,22 +32,23 @@
     ]
   },
   "dependencies": {
-    "npm-check-updates": "^16.14.15",
-    "tiddlywiki": "^5.3.3",
-    "tiddlywiki-plugin-dev": "^0.0.41",
     "@json-editor/json-editor": "2.14.1",
     "esbuild-sass-plugin": "^3.1.0",
-    "spectre.css": "^0.5.9"
+    "npm-check-updates": "^16.14.15",
+    "spectre.css": "^0.5.9",
+    "tiddlywiki": "^5.3.3",
+    "tiddlywiki-plugin-dev": "^0.0.41"
   },
   "devDependencies": {
-    "eslint-config-tidgi": "1.2.2",
-    "dprint": "^0.45.0",
     "@modern-js/tsconfig": "^2.48.0",
     "@types/node": "^20.11.25",
+    "dprint": "^0.45.0",
+    "eslint-config-tidgi": "1.2.2",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.2",
     "postcss": "^8.4.35",
     "rimraf": "^5.0.5",
+    "sass-migrator": "^2.0.2",
     "tw5-typed": "^0.5.1",
     "typescript": "^5.4.2"
   }

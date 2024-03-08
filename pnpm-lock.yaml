@@ -49,6 +49,9 @@ devDependencies:
   rimraf:
     specifier: ^5.0.5
     version: 5.0.5
+  sass-migrator:
+    specifier: ^2.0.2
+    version: 2.0.2
   tw5-typed:
     specifier: ^0.5.1
     version: 0.5.1
@@ -5425,6 +5428,12 @@ packages:
       sass-embedded-win32-ia32: 1.71.1
       sass-embedded-win32-x64: 1.71.1
     dev: false
+
+  /sass-migrator@2.0.2:
+    resolution: {integrity: sha512-+uQjxYL+wuU9nw2IKnZk1hz8MlONp6yQPYb+fJLkekPjMUvNip1Sd2arZdPdhXwVzGFyrGq7AkskQohC2wc1kQ==}
+    engines: {node: '>=10.12.0'}
+    hasBin: true
+    dev: true
 
   /sass@1.63.6:
     resolution: {integrity: sha512-MJuxGMHzaOW7ipp+1KdELtqKbfAWbH7OLIdoSMnVe3EXPMTmxTmlaZDCTsgIpPCs3w99lLo9/zDKkOrJuT5byw==}
