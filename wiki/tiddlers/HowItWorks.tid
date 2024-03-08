@@ -4,40 +4,7 @@ modified: 20230601115347563
 modifier: 林一二
 tags: Index
 title: HowItWorks
-type: text/vnd.tiddlywiki
 
-<$list filter="[[$:/language]get[text]removeprefix[$:/languages/]else[en-GB]]" variable="lang">
+\define lingo-base() language/
 
-	<$list filter="[<lang>search[zh]]">
-
-这就是SuperTag插件的工作原理：
-
-# 自动生成的表单显示在一个ViewTemplate中，它将显示在tiddler的底部。
-## 这个ViewTemplate有一个`<$list>`小部件，有条件地显示内容
-## 如果tiddler有一个SuperTag，并且SuperTag有一个用`$:/SuperTag/TraitTag`标记的TraitTag，它就会显示。
-# 在这个ViewTemplate上有一个`<$supertag-form />`小部件
-## 这个部件在运行时将收集这些TraitTag上的`schema`字段
-## 它使用[[eclipsesource/jsonforms|https://github.com/eclipsesource/jsonforms]]开源库来构建表单
-##使用tiddler存在的数据来填写表格
-
-<$whiteboard tiddler="HowTechnicallySuperTagWorks" readonly="yes" height="900px" />
-
-	</$list>
-
-	<$list filter="[<lang>!search[zh]]">
-
-This is how SuperTag plugin works:
-
-# Auto generated form is displayed in a ViewTemplate that will show on the bottom of the tiddler
-## This ViewTemplate have a `<$list>` widget that conditionally shows the content
-## It shows if the tiddler has a SuperTag, and SuperTag has a TraitTag that tagged with `$:/SuperTag/TraitTag`.
-# A `<$supertag-form />` widget on this ViewTemplate
-## This widget will gather `schema` field on these TraitTags upon running
-## It uses [[eclipsesource/jsonforms|https://github.com/eclipsesource/jsonforms]] open source library to build the form
-## Fill in the form using tiddler's existed data
-
-<$whiteboard tiddler="HowTechnicallySuperTagWorks" readonly="yes" height="900px" />
-
-	</$list>
-
-</$list>
+<<lingo HowItWorks>>

@@ -1,0 +1,19 @@
+title: language/zh-Hans/Plugin developer
+
+!!! 对于所有的插件开发者
+
+[[对所有插件开发者关于字段名的建议：让我们使用本体论来保持互操作性 - 国际论坛|https://talk.tiddlywiki.org/t/suggestion-for-all-plugin-developers-about-field-name-lets-use-ontology-to-maintain-interoperability/1923]]
+
+如果你正在创建一个大量使用条目字段的插件，你最好搜索已经存在的提供特质标签的超级标签子插件，或者在[[国际论坛|https://talk.tiddlywiki.org]]搜索它。
+
+这样你就可以重复使用现有的特质标签。这样，我们社区的插件就可以一起工作，使用户的太微成为一个真正的统一的数据库。
+
+<$whiteboard tiddler="SuperTagShareTheTraitsDiagram" readonly="yes" height="400px" />
+
+!!! 通用的 JSON 表单编辑器
+
+见[[WidgetExamples]]或[[Examples]]。
+
+这只是作为插件开发者建立自定义表单的工具而提供的。
+
+出于互操作性的考虑，最好使用上述的特质标签方法，这样我们的太微开发者社区就可以有一个一致的方法来向终端用户提供表单。

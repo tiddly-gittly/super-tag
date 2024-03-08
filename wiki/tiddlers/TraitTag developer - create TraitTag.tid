@@ -4,60 +4,8 @@ modified: 20230601114655643
 modifier: 林一二
 tags: UserManual
 title: TraitTag developer - create TraitTag
-type: text/vnd.tiddlywiki
+caption: <<lingo Caption/TraitTagDeveloperCreateTraitTag language/>>
 
-<$list filter="[[$:/language]get[text]removeprefix[$:/languages/]else[en-GB]]" variable="lang">
+\define lingo-base() language/
 
-	<$list filter="[<lang>search[zh]]">
-
-作为一个开发者，你会想要创建你自己的TraitTag。
-
-一个TraitTag有一个重要的字段`"schema"`。
-
-<$whiteboard tiddler="HowToCreateTraitTagDiagram" readonly="yes" height="750px" />
-
-*schema：[[JSON Schema|https://json-schema.org/]]，描述一个表单将收到哪些数据。
-** 你可以参考[[JSON Editor Doc#JSON Schema Support|https://github.com/json-editor/json-editor#json-schema-support]]了解表单的高级功能
-** 一个基本的假设是，JSON模式是`类型： "对象"`，并且只有1层属性。
-** 所有特征标签提供的所有属性都被合并到一个单一的JSON Schema中，然后被用来显示SuperTag表单
-
-请看上面的链接来学习如何编写它们。你也可以从一些存在的[[TraitTag Examples|$:/SuperTag/TraitTag]]学习。
-
-* 在线免费JSONchema编辑器
-** [ext[bjdash/JSON-Schema-Builder|https://bjdash.github.io/JSON-Schema-Builder/]]
-** [ext[hellosean1025/json-schema-visual-editor|https://hellosean1025.github.io/json-schema-visual-editor/]]
-* 将生成的JSONSchema序列化的工具
-** [ext[json-stringify-online|https://jsonformatter.org/json-stringify-online]]
-
-* 在创建TraitTag tiddlers时有用的Tiddlywiki插件
-** [[wikilabs/field-editor - Side by side multiline field editor|https://tw-cpl.netlify.app/#Plugin_202203243721287]]
-
-	</$list>
-
-	<$list filter="[<lang>!search[zh]]">
-
-As a developer, you will want to create your own TraitTag.
-
-A TraitTag has a important field `"schema"`.
-
-<$whiteboard tiddler="HowToCreateTraitTagDiagram" readonly="yes" height="750px" />
-
-* schema: a [[JSON Schema|https://json-schema.org/]] that describe what data a form will receive.
-** You may refer to [[JSON Editor Doc#JSON Schema Support|https://github.com/json-editor/json-editor#json-schema-support]] for advanced features in the form
-** A basic assumption is that the JSON Schema are `type: "object"` and has only 1 level of properties.
-** All properties provided by all trait tags are merged into a single JSON Schema, and then is used to display the SuperTag Form
-
-See links above to learn how to write them. You can also learn from some existed [[TraitTag Examples|$:/SuperTag/TraitTag]].
-
-* Online free JSONSchema editors
-** [ext[bjdash/JSON-Schema-Builder|https://bjdash.github.io/JSON-Schema-Builder/]]
-** [ext[hellosean1025/json-schema-visual-editor|https://hellosean1025.github.io/json-schema-visual-editor/]]
-* Tools to serialize the generated JSONSchema
-** [ext[json-stringify-online|https://jsonformatter.org/json-stringify-online]]
-
-* Tiddlywiki plugins useful in creating TraitTag tiddlers
-** [[wikilabs/field-editor - Side by side multiline field editor|https://tw-cpl.netlify.app/#Plugin_202203243721287]]
-
-	</$list>
-
-</$list>
+<<lingo UserManual>>

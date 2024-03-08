@@ -4,60 +4,7 @@ modified: 20230218125652922
 modifier: 林一二
 tags: Index
 title: Examples
-type: text/vnd.tiddlywiki
 
-<$list filter="[[$:/language]get[text]removeprefix[$:/languages/]else[en-GB]]" variable="lang">
+\define lingo-base() language/
 
-	<$list filter="[<lang>search[zh]]">
-
-!! 超级标签
-
-!!! 任务
-
-[[Task]]是一个超级标签，[[任务|MyExampleTask]]是一个普通的条目，添加了这个超级标签。
-
-[[$:/TraitTag/ActionState]]和[[$:/TraitTag/Priority]]是添加到它的示例TraitTag。
-
-!!! 计数器
-
-[[ColorAndCounter]]是一个超级标签，有[[$:/TraitTag/Count]]和[[$:/TraitTag/Color]]两个特性标签。
-
-!! 特质标签
-
-详见[[$:/SuperTag/TraitTag]]。
-
-!! 小工具
-
-[[WidgetExamples]]
-
-{{WidgetExamples}}。
-
-	</$list>
-
-	<$list filter="[<lang>!search[zh]]">
-
-!! SuperTag
-
-!!! Task
-
-[[Task]] is a SuperTag, [[MyExampleTask]] is a normal tiddler adds this SuperTag.
-
-[[$:/TraitTag/ActionState]] and [[$:/TraitTag/Priority]] are example TraitTags adding to it.
-
-!!! Counter
-
-[[ColorAndCounter]] is a SuperTag, with TraitTag [[$:/TraitTag/Count]] and [[$:/TraitTag/Color]]
-
-!! TraitTag
-
-See [[$:/SuperTag/TraitTag]] for details.
-
-!! Widget
-
-[[WidgetExamples]]
-
-{{WidgetExamples}}
-
-	</$list>
-
-</$list>
+<<lingo Examples>>

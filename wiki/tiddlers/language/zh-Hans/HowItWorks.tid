@@ -1,0 +1,17 @@
+title: language/zh-Hans/HowItWorks
+
+<$list filter="[[$:/language]get[text]removeprefix[$:/languages/]else[en-GB]]" variable="lang">
+
+	<$list filter="[<lang>search[zh]]">
+
+这是超级标签插件的工作原理：
+
+# 自动生成的表单显示在一个视图模板（ViewTemplate）中，它将显示在条目的底部。
+## 这个视图模板有一个`<$list>`微件，选择性地显示内容
+## 如果条目有一个超级标签，并且超级标签有一个用`$:/SuperTag/TraitTag`标记的特质标签（Trait Tag），它就会显示。
+# 在这个视图模板上有一个`<$supertag-form />`微件
+## 这个部件在运行时将收集这些特质标签上的`schema`字段
+## 它使用[[eclipsesource/jsonforms|https://github.com/eclipsesource/jsonforms]]开源库来构建表单
+##使用条目存在的数据来填写表格
+
+<$whiteboard tiddler="HowTechnicallySuperTagWorks" readonly="yes" height="900px" />

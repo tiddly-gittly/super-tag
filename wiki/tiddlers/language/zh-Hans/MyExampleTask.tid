@@ -1,0 +1,20 @@
+completed: true
+created: 20230218103715583
+creator: 林一二
+modified: 20230218103716732
+modifier: 林一二
+tags: 任务 颜色和计数器
+title: 我的示例任务
+
+点击这个，就会出现一个新的输入：
+
+<$button>
+  更新完成计数
+  <$action-setfield tiddler=<<currentTiddler>> completedCount="1" />
+</$button>
+
+因为在默认情况下，它只显示已经有值的字段。
+
+如果你想让更多的字段输入显示出来，请点击「 ≡ properties」按钮来扩展可用的字段编辑器列表： (如[[Readme|Index]]中讲到的)
+
+修改后，你可以点击 {{$:/core/ui/Buttons/info}} 按钮来查看条目上的字段信息。

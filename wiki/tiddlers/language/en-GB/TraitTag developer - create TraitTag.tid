@@ -1,0 +1,72 @@
+title: language/en-GB/TraitTag developer - create TraitTag
+
+As a developer, you will want to create your own TraitTag.
+
+A TraitTag has a important field `"schema"`.
+
+<$whiteboard tiddler="HowToCreateTraitTagDiagram" readonly="yes" height="750px" />
+
+* schema: a [[JSON Schema|https://json-schema.org/]] that describe what data a form will receive.
+** You may refer to [[JSON Editor Doc#JSON Schema Support|https://github.com/json-editor/json-editor#json-schema-support]] for advanced features in the form
+** A basic assumption is that the JSON Schema are `type: "object"` and has only 1 level of properties.
+** All properties provided by all trait tags are merged into a single JSON Schema, and then is used to display the SuperTag Form
+
+See links above to learn how to write them. You can also learn from some existed [[TraitTag Examples|$:/SuperTag/TraitTag]].
+
+* Online free JSONSchema editors
+** [ext[bjdash/JSON-Schema-Builder|https://bjdash.github.io/JSON-Schema-Builder/]]
+** [ext[hellosean1025/json-schema-visual-editor|https://hellosean1025.github.io/json-schema-visual-editor/]]
+* Tools to serialize the generated JSONSchema
+** [ext[json-stringify-online|https://jsonformatter.org/json-stringify-online]]
+
+* Tiddlywiki plugins useful in creating TraitTag tiddlers
+** [[wikilabs/field-editor - Side by side multiline field editor|https://tw-cpl.netlify.app/#Plugin_202203243721287]]
+
+
+If you want to customise the form, follow these steps
+
+* Create a new entry, it is recommended to prefix it with `$:/TraitTag`, something like `$:/TraitTag/xxx`, followed by the custom English name, but it is fine not to do so.
+* And add the tag `$:/SuperTag/TraitTag`, this is a must.
+* Add the `schema` field, which is a must.
+** The content of the `schema` field needs to refer to the following format
+* Another new entry with the tag `$:/TraitTag/xxx`. Other entries that add this entry as a tag will automatically generate a form below the body, with the contents of the form defined by the `schema` field in the `$:/TraitTag/xxx` entry.
+** This means that multiple forms can be combined by adding multiple `$:/TraitTag/xxx` tags to a single entry. If one form contains `Name, Gender, Age` and another form contains `Position, Salary`, then by adding both tags you can combine the two forms together without generating options for both forms. Very smart. It is also possible to organise a wide range of different forms.
+
+```
+{
+  "type": "object",
+  "properties": {
+    "completed": {
+      "type": "boolean"
+    },
+    "completeType": {
+      "type": "string",
+      "enum": ["Delay", "AtTime", "InAdvance"]
+    },
+    "completedCount": {
+      "type": "number"
+    }
+  },
+  "required": ["completed"]
+}
+```
+
+It starts with a bracket and contains type and properties and required. type indicates that it is the content of an object, properties is the name of a field and the corresponding field value, and required is required. However, the form will only be displayed below if the field content is determined when the new entry is created. If you explicitly add the field tmo_taskState and its value New to the action-createtiddler in the code below, the form will be displayed automatically.
+
+```
+<$button>
+    <$action-createtiddler
+      tags={{{ [{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}addsuffix[ ]addsuffix<currentTiddler>] }}}
+      tmo_taskState="New"
+    >
+      <$action-sendmessage $message="tm-edit-tiddler" $param=<<createTiddler-title>>/>
+    </$action-createtiddler>
+    {{$:/plugins/linonetwo/intention-tower-knowledge-graph/Images/Task}} 新任务
+  </$button>
+```
+
+The value in properties is of the form `"completed": {"type": "boolean"},` with the field name enclosed in inverted commas, followed by a colon and then brackets with the type property written inside, which is a boolean value in the code above and will be displayed in the form as true or false. string, number and so on. This is followed by a comma in English, if it is the last one you don't need to write a comma again. If the option is a string type and then the value is an array available, then enum can be used, followed by a bracket and the value enclosed in English inverted commas.
+
+The content inside can have title, description, type, format, etc.The type types are string, number, array, object, boolean, integer and integer. The number and integer types can have maximum and minimum value controls. At the same level as type in the properties field name is format, which can be `color` colour, `date` date value, `email` email format, etc. The combination of type and format allows for most form functionality. This can be learnt from the [[JSON Schema|https://json-schema.org/]] documentation or from the [[TraitTag Examples|$:/SuperTag/TraitTag]] examples. Normally JSON schema can nest data, but because of the Tiddlywiki there is no field levels that can be nested, so the format of nested data is not covered either.
+
+The schema saves data in json format and the format is very strict, writing a wrong comma, missing a comma or writing a wrong semicolon or missing a semicolon will result in errors and will not display properly. You can edit it better with the help of the following URL or open it in a code editor such as VS Code, as there will be automatic checking and automatic formatting that will give a good indication of the problem.

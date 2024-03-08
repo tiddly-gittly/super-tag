@@ -3,53 +3,9 @@ creator: 林一二
 modified: 20230601115351731
 modifier: 林一二
 title: Index
-type: text/vnd.tiddlywiki
+
+\define lingo-base() language/
 
 {{$:/snippets/minilanguageswitcher}}
 
-<$list filter="[[$:/language]get[text]removeprefix[$:/languages/]else[en-GB]]" variable="lang">
-
-	<$list filter="[<lang>search[zh]]">
-
-!! 介绍
-
-{{$:/plugins/linonetwo/super-tag/readme}}
-
-!! 为什么使用超级标签
-
-为用户提供模板，只需添加一个标签就可以创建表单，因此将结构数据放入tw更容易。用户不需要设计字段名，而且容易使用所见即所得的表单，使用户更乐意使用这些字段。
-
-也允许开发者使用相同的字段集，因此他们的插件可以无缝地一起工作。例如，两个TODO插件可以互相读取对方的任务数据，这使得TiddlyWiki社区可以深度互通。
-
-!! 如何使用
-
-{{UserManual}}
-
-!! 开发
-
-[[HowItWorks]]
-	</$list>
-
-	<$list filter="[<lang>!search[zh]]">
-
-!! Readme
-
-{{$:/plugins/linonetwo/super-tag/readme}}
-
-!! Why SuperTag
-
-Provide template for user to create form by simply adding a tag, so putting structure data into tw is much easier. User don't need to design field name, and easy to use WYSIWYG form make it happier to use these fields.
-
-Also allows developers to use the same set of fields, so their plugins works together seamlessly. For example, two TODO plugin can read each others' task data, makes TiddlyWiki community interoperate deeply.
-
-!! How to use
-
-{{UserManual}}
-
-!! Develop
-
-[[HowItWorks]]
-
-	</$list>
-
-</$list>
+<<lingo Index>>

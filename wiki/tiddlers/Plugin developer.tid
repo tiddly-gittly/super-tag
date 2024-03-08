@@ -4,55 +4,7 @@ modified: 20230601114858083
 modifier: 林一二
 tags: UserManual
 title: Plugin developer
-type: text/vnd.tiddlywiki
 
-<$list filter="[[$:/language]get[text]removeprefix[$:/languages/]else[en-GB]]" variable="lang">
+\define lingo-base() language/
 
-	<$list filter="[<lang>search[zh]]">
-
-!!! 对于所有的插件开发者
-
-[[对所有插件开发者关于字段名的建议：让我们使用本体论来保持互操作性 - talk.tiddlywiki.org|https://talk.tiddlywiki.org/t/suggestion-for-all-plugin-developers-about-field-name-lets-use-ontology-to-maintain-interoperability/1923]]
-
-如果你正在创建一个大量使用tiddler字段的插件，你最好搜索已经存在的提供trait标签的supertag子插件，或者在[[tiddlywiki论坛|https://talk.tiddlywiki.org]]搜索它。
-
-这样你就可以重复使用现有的TraitTags。这样，我们社区的插件就可以一起工作，使用户的tiddlywiki成为一个真正的统一的数据库。
-
-<$whiteboard tiddler="SuperTagShareTheTraitsDiagram" readonly="yes" height="400px" />
-
-
-!!! 一般建议JSON表格编辑器
-
-见[[WidgetExamples]]或[[Examples]]。
-
-这只是作为插件开发者建立自定义表单的工具而提供的。
-
-出于互操作性的考虑，最好使用上述的TraitTag方法，这样我们的TiddlyWiki开发者社区就可以有一个一致的方法来向终端用户提供表单。
-
-	</$list>
-
-	<$list filter="[<lang>!search[zh]]">
-
-!!! For all plugin developer
-
-[[Suggestion for all Plugin developers about field name: Let’s use Ontology to maintain Interoperability - talk.tiddlywiki.org|https://talk.tiddlywiki.org/t/suggestion-for-all-plugin-developers-about-field-name-lets-use-ontology-to-maintain-interoperability/1923]]
-
-If you are creating a plugin that heavily make use of tiddler fields, You'd better search for existed supertag sub-plugins that provides trait tags, or search in [[tiddlywiki forum|https://talk.tiddlywiki.org]] for it.
-
-So you can reuse existed TraitTags. In this way, plugins in our community can work together, make users' tiddlywiki a real unified database.
-
-<$whiteboard tiddler="SuperTagShareTheTraitsDiagram" readonly="yes" height="400px" />
-
-
-!!! General propose JSON Form Editor
-
-See [[WidgetExamples]] or [[Examples]].
-
-This is only provided as a tool for plugin developers to build custom forms.
-
-For interoperability consideration, it is better to use the TraitTag approach described above, so our TiddlyWiki developer community can have a consistent way to deliver form to end users.
-
-	</$list>
-
-</$list>
-
+<<lingo "Plugin developer">>

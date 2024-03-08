@@ -1,0 +1,9 @@
+title: language/zh-Hans/Advanced user - use TraitTag create SuperTag
+
+你安装在你的wiki上的一些插件会提供特质标签，可以用来创建你自己的超级标签。只要在一个条目上添加一个或多个特质标签，这个条目就会成为一个超级标签。
+
+<$whiteboard tiddler="HowToCreateSuperTagDiagram" readonly="yes" />
+
+同一个特质标签可以用于创建多个超级标签，尤其是不同语言的超级标签，例如 [[任务]] 和 [[Task]]；[[颜色和计数器]] 和 [[ColorAndCounter]]。因为它们带有同样的特质标签，所以它们作为超级标签的效果一模一样。
+
+[[具体原理|HowItWorks]]

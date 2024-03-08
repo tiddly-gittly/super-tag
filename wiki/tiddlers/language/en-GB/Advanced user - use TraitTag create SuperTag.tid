@@ -1,0 +1,9 @@
+title: language/en-GB/Advanced user - use TraitTag create SuperTag
+
+Some plugins you installed to your wiki will provide TraitTag that can be used to create your own SuperTag. Just add one or more TraitTag on a tiddler, this tiddler will become a SuperTag.
+
+<$whiteboard tiddler="HowToCreateSuperTagDiagram" readonly="yes" />
+
+The same TraitTag can be used to create multiple super tags, especially in different languages, such as [[Task]] and [[任务]]; [[ColorAndCounter]] and [[颜色和计数器]]. Because they carry the same TraitTags, they work exactly as the same SuperTag.
+
+[[How it works under the hood|HowItWorks]]

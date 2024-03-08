@@ -1,0 +1,20 @@
+title: language/en-GB/Plugin developer
+
+!!! For all plugin developer
+
+[[Suggestion for all Plugin developers about field name: Let’s use Ontology to maintain Interoperability - talk.tiddlywiki.org|https://talk.tiddlywiki.org/t/suggestion-for-all-plugin-developers-about-field-name-lets-use-ontology-to-maintain-interoperability/1923]]
+
+If you are creating a plugin that heavily make use of tiddler fields, You'd better search for existed supertag sub-plugins that provides trait tags, or search in [[tiddlywiki forum|https://talk.tiddlywiki.org]] for it.
+
+So you can reuse existed TraitTags. In this way, plugins in our community can work together, make users' tiddlywiki a real unified database.
+
+<$whiteboard tiddler="SuperTagShareTheTraitsDiagram" readonly="yes" height="400px" />
+
+
+!!! General propose JSON Form Editor
+
+See [[WidgetExamples]] or [[Examples]].
+
+This is only provided as a tool for plugin developers to build custom forms.
+
+For interoperability consideration, it is better to use the TraitTag approach described above, so our TiddlyWiki developer community can have a consistent way to deliver form to end users.

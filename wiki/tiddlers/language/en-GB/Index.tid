@@ -1,0 +1,15 @@
+title: language/en-GB/Index
+
+!! Readme
+
+{{$:/plugins/linonetwo/super-tag/readme}}
+
+!! Why SuperTag
+
+Provide template for user to create form by simply adding a tag, so putting structure data into tw is much easier. User don't need to design field name, and easy to use WYSIWYG form make it happier to use these fields.
+
+Also allows developers to use the same set of fields, so their plugins works together seamlessly. For example, two TODO plugin can read each others' task data, makes TiddlyWiki community interoperate deeply.
+
+!! User Manual
+
+{{UserManual}}

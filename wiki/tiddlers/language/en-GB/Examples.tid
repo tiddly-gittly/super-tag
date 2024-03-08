@@ -1,0 +1,23 @@
+title: language/en-GB/Examples
+
+!! SuperTag
+
+!!! Task
+
+[[Task]] is a SuperTag, [[MyExampleTask]] is a normal tiddler adds this SuperTag.
+
+[[$:/TraitTag/ActionState]] and [[$:/TraitTag/Priority]] are example TraitTags adding to it.
+
+!!! Counter
+
+[[ColorAndCounter]] is a SuperTag, with TraitTag [[$:/TraitTag/Count]] and [[$:/TraitTag/Color]]
+
+!! TraitTag
+
+See [[$:/SuperTag/TraitTag]] for details.
+
+!! Widget
+
+[[WidgetExamples]]
+
+{{WidgetExamples}}

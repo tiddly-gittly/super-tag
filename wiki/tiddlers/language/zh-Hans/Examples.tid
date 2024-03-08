@@ -1,0 +1,23 @@
+title: language/zh-Hans/Examples
+
+!! 超级标签
+
+!!! 任务
+
+[[任务]]是一个超级标签，[[我的示例任务]]是一个普通的条目，添加了这个超级标签。
+
+[[$:/TraitTag/ActionState]]和[[$:/TraitTag/Priority]]是示例用的添加到[[任务]]上的特质标签。
+
+!!! 计数器
+
+[[ColorAndCounter]]是一个超级标签，有[[$:/TraitTag/Count]]和[[$:/TraitTag/Color]]两个特性标签。
+
+!! 特质标签
+
+详见[[$:/SuperTag/TraitTag]]。
+
+!! 小工具
+
+[[WidgetExamples]]
+
+{{WidgetExamples}}

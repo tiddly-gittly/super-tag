@@ -1,0 +1,20 @@
+completed: true
+created: 20230218103715583
+creator: 林一二
+modified: 20230218103716732
+modifier: 林一二
+tags: Task ColorAndCounter
+title: MyExampleTask
+
+Click on this, and a new input will show up:
+
+<$button>
+  Update complete counter
+  <$action-setfield tiddler=<<currentTiddler>> completedCount="1" />
+</$button>
+
+Because by default it only shows fields that already has value.
+
+If you want more field inputs to show up, click " ≡ properties" button to expand the available field editor list: (as taught in the [[Readme|Index]])
+
+Once modified, you can click the {{$:/core/ui/Buttons/info}} button to view the field information of the tiddler.
