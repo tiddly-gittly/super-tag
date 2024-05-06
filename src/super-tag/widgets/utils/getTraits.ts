@@ -1,5 +1,5 @@
-import type { ITiddlerFields } from 'tiddlywiki';
 import type { JSONSchema4 } from 'json-schema';
+import type { ITiddlerFields } from 'tiddlywiki';
 import { translateSchema } from './translateSchema';
 
 export interface ITraitTagData {
@@ -23,14 +23,16 @@ export function getSuperTagTraits(currentTiddlerTitle: string): ISuperTagData[] 
           const potentialTraitTiddler = $tw.wiki.getTiddler(traitTitle);
           if (potentialTraitTiddler?.fields?.tags?.some((tag) => tag === '$:/SuperTag/TraitTag') !== true) return undefined;
           // now it is confirmed to be a trait tag
-          let { title, schema } = potentialTraitTiddler.fields;
-          if (typeof schema !== 'string') return undefined;
+          let { title, schema: schemaString } = potentialTraitTiddler.fields;
+          if (typeof schemaString !== 'string') return undefined;
+          let schema: JSONSchema4;
           try {
-            schema = JSON.parse(schema);
+            schema = JSON.parse(schemaString) as JSONSchema4;
           } catch (error) {
             console.error(`TraitTag ${title} has invalid schema, error: ${(error as Error).message}`);
             return undefined;
           }
+          schema = translateSchema(schema);
           // if (typeof uiSchema !== 'string') return undefined;
           // try {
           //   uiSchema = JSON.parse(uiSchema);
@@ -42,8 +44,7 @@ export function getSuperTagTraits(currentTiddlerTitle: string): ISuperTagData[] 
             schema,
           } as ITraitTagData;
         })
-        .filter((item): item is ITraitTagData => item !== undefined)
-        .map(translateSchema);
+        .filter((item): item is ITraitTagData => item !== undefined);
       if (traits.length === 0) return undefined;
 
       return {

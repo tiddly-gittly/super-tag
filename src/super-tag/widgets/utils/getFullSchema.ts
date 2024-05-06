@@ -12,6 +12,10 @@ export function getFullSchemaFromCurrentTiddler(currentTiddlerTitle: string) {
   return { fullSchema, tiddlerFields };
 }
 
+/**
+ * Used by `json-editor-form` widget.
+ * For `supertag-form` widget, see `getFullSchemaFromCurrentTiddler`.
+ */
 export function getFullSchemaFromFilter(filter: string, currentTiddlerTitle: string, parentWidget: Widget) {
   const jsonSchemas = $tw.wiki
     .filterTiddlers(filter, parentWidget)
