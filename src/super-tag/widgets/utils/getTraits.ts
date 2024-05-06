@@ -1,5 +1,6 @@
 import type { ITiddlerFields } from 'tiddlywiki';
 import type { JSONSchema4 } from 'json-schema';
+import { translateSchema } from './translateSchema';
 
 export interface ITraitTagData {
   schema: JSONSchema4;
@@ -41,7 +42,8 @@ export function getSuperTagTraits(currentTiddlerTitle: string): ISuperTagData[] 
             schema,
           } as ITraitTagData;
         })
-        .filter((item): item is ITraitTagData => item !== undefined);
+        .filter((item): item is ITraitTagData => item !== undefined)
+        .map(translateSchema);
       if (traits.length === 0) return undefined;
 
       return {
