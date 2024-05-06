@@ -2,6 +2,7 @@ import type { Widget, ITiddlerFields } from 'tiddlywiki';
 import { type ISuperTagData, getSuperTagTraits } from './getTraits';
 import { mergeSchema } from './mergeSchema';
 import type { JSONSchema4 } from 'json-schema';
+import { translateSchema } from './translateSchema';
 
 export function getFullSchemaFromCurrentTiddler(currentTiddlerTitle: string) {
   const superTags = getSuperTagTraits(currentTiddlerTitle);
@@ -22,7 +23,7 @@ export function getFullSchemaFromFilter(filter: string, currentTiddlerTitle: str
       }
     })
     .filter((item): item is JSONSchema4 => item !== undefined);
-  const superTags = jsonSchemas.map((schema) => ({ title: '<generated from filter>', traits: [{ schema }] } as ISuperTagData));
+  const superTags = jsonSchemas.map(translateSchema).map((schema) => ({ title: '<generated from filter>', traits: [{ schema }] } as ISuperTagData));
   const fullSchema = mergeSchema(superTags);
   const tiddlerFields = $tw.wiki.getTiddler(currentTiddlerTitle)?.fields ?? ({} as ITiddlerFields);
   return { fullSchema, tiddlerFields };
