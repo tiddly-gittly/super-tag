@@ -15,7 +15,7 @@ class JSONEditorFormWidget extends SupertagFormWidget {
   filterToGetJSONSchema?: string;
   currentTiddlerTitle?: string;
 
-  render(parent: Element, _nextSibling: Element | null): void {
+  render(parent: Element, nextSibling: Element | null): void {
     this.parentDomNode = parent;
     this.computeAttributes();
     this.execute();
@@ -32,9 +32,8 @@ class JSONEditorFormWidget extends SupertagFormWidget {
       this.containerElement = containerElement;
       containerElement.appendChild(editorElement);
       containerElement.appendChild(errorValidatorInfoElement);
+      parent.insertBefore(containerElement, nextSibling);
       this.domNodes.push(containerElement);
-      // eslint-disable-next-line unicorn/prefer-dom-node-append
-      parent.appendChild(containerElement);
       if (this.parentWidget === undefined) return;
       const { fullSchema, tiddlerFields } = getFullSchemaFromFilter(filterToGetJSONSchema, currentTiddlerTitle, this.parentWidget);
       if (fullSchema === undefined) return;

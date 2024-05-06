@@ -17,7 +17,7 @@ class SupertagFormWidget extends Widget {
   /**
    * Lifecycle method: Render this widget into the DOM
    */
-  public render(parent: Element, _nextSibling: Element | null): void {
+  public render(parent: Element, nextSibling: Element | null): void {
     this.parentDomNode = parent;
     this.computeAttributes();
     this.execute();
@@ -32,9 +32,8 @@ class SupertagFormWidget extends Widget {
       this.containerElement = containerElement;
       containerElement.appendChild(editorElement);
       containerElement.appendChild(errorValidatorInfoElement);
+      parent.insertBefore(containerElement, nextSibling);
       this.domNodes.push(containerElement);
-      // eslint-disable-next-line unicorn/prefer-dom-node-append
-      parent.appendChild(containerElement);
       const { fullSchema, tiddlerFields } = getFullSchemaFromCurrentTiddler(currentTiddlerTitle) ?? {};
       if (fullSchema === undefined) return;
       if (tiddlerFields === undefined) return;
@@ -64,8 +63,8 @@ class SupertagFormWidget extends Widget {
   };
 
   public removeChildDomNodes(): void {
-    this.editor?.off('change', this.formOnChange);
-    this.editor?.destroy();
+    this.editor?.off?.('change', this.formOnChange);
+    this.editor?.destroy?.();
     this.editor = undefined;
     this.containerElement = undefined;
     this.errorValidatorInfoElement = undefined;
