@@ -1,5 +1,4 @@
 title: ExampleSchemaRendering
-schema: {  "type": "object",  "properties": {    "color": {      "type": "string",      "format": "color"}  }}
 color: #66ccff
 
 \define lingo-base() language/

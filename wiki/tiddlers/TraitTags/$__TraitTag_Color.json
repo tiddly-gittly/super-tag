@@ -3,10 +3,10 @@
         "created": "20230218125912484",
         "text": "Sets `color` field.",
         "title": "$:/TraitTag/Color",
-        "modified": "20230218130040764",
+        "modified": "20240506170805343",
         "tags": "$:/SuperTag/TraitTag",
         "type": "text/vnd.tiddlywiki",
         "wl-field-name-text": "schema",
-        "schema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"color\": {\n      \"type\": \"string\",\n      \"format\": \"color\"\n}\n  }\n}"
+        "schema": "{\n  \"type\": \"object\",\n  \"lingo-base\": \"language/\",\n  \"properties\": {\n    \"color\": {\n      \"type\": \"string\",\n      \"title\": \"TraitTag/Color/Title\",\n      \"description\": \"TraitTag/Color/Description\",\n      \"format\": \"color\"\n    }\n  }\n}"
     }
 ]

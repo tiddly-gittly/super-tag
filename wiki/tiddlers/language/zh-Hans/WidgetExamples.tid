@@ -22,9 +22,9 @@ title: language/zh-Hans/WidgetExamples
 
 我们可以使用这个微件来控制[[ExampleSchemaRendering]]条目上的`color`字段，也可以使用它的`schema`字段。
 
-`<$json-editor-form filter="[[ExampleSchemaRendering]get[schema]]" tiddler=ExampleSchemaRendering />`。
+`<$json-editor-form filter="[[$:/TraitTag/Color]get[schema]]" tiddler=ExampleSchemaRendering />`。
 
-<$json-editor-form filter="[[ExampleSchemaRendering]get[schema]]" tiddler=ExampleSchemaRendering />
+<$json-editor-form filter="[[$:/TraitTag/Color]get[schema]]" tiddler=ExampleSchemaRendering />
 
 渲染效果
 

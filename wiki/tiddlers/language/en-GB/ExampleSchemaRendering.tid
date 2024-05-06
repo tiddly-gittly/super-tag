@@ -1,9 +1,8 @@
 title: language/en-GB/ExampleSchemaRendering
-schema: {  "type": "object",  "properties": {    "color": {      "type": "string",      "format": "color"}  }}
 color: #66ccff
 
-<$json-editor-form filter="[[ExampleSchemaRendering]get[schema]debug-log[]]" />
+<$json-editor-form filter="[[$:/TraitTag/Color]get[schema]debug-log[]]" />
 
 My color is {{ExampleSchemaRendering!!color}} : <<tag ExampleSchemaRendering>>
 
-My schema is <$codeblock code={{ExampleSchemaRendering!!schema}} />
+My schema is <$codeblock code={{$:/TraitTag/Color!!schema}} />

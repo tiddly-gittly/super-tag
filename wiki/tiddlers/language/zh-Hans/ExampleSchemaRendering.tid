@@ -1,7 +1,7 @@
 title: language/zh-Hans/ExampleSchemaRendering
 
-<$json-editor-form filter="[[ExampleSchemaRendering]get[schema]debug-log[]]" />
+<$json-editor-form filter="[[$:/TraitTag/Color]get[schema]debug-log[]]" />
 
 我的颜色是 {{ExampleSchemaRendering!!color}} : <<tag ExampleSchemaRendering>>
 
-我的规格（Schema）是 <$codeblock code={{ExampleSchemaRendering!!schema}} />
+我的规格（Schema）是 <$codeblock code={{$:/TraitTag/Color!!schema}} />

@@ -1,4 +1,4 @@
-title: language/en-GB/language/en-GB/WidgetExamples
+title: language/en-GB/WidgetExamples
 
 !! General propose JSON Form Editor Widget usage
 
@@ -22,9 +22,9 @@ Try it in [[ExampleSchemaRendering]]
 
 We can use this widget to control the `color` field on [[ExampleSchemaRendering]] tiddler, also use the `schema` field on it.
 
-`<$json-editor-form filter="[[ExampleSchemaRendering]get[schema]]" tiddler=ExampleSchemaRendering />`
+`<$json-editor-form filter="[[$:/TraitTag/Color]get[schema]]" tiddler=ExampleSchemaRendering />`
 
-<$json-editor-form filter="[[ExampleSchemaRendering]get[schema]]" tiddler=ExampleSchemaRendering />
+<$json-editor-form filter="[[$:/TraitTag/Color]get[schema]]" tiddler=ExampleSchemaRendering />
 
 Rendering output
 
