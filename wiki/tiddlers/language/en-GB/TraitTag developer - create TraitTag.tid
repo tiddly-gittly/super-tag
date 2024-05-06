@@ -2,7 +2,7 @@ title: language/en-GB/TraitTag developer - create TraitTag
 
 As a developer, you will want to create your own TraitTag.
 
-A TraitTag has a important field `"schema"`.
+!! A TraitTag has a important field `"schema"`.
 
 <$whiteboard tiddler="HowToCreateTraitTagDiagram" readonly="yes" height="750px" />
 
@@ -12,6 +12,8 @@ A TraitTag has a important field `"schema"`.
 ** All properties provided by all trait tags are merged into a single JSON Schema, and then is used to display the SuperTag Form
 
 See links above to learn how to write them. You can also learn from some existed [[TraitTag Examples|$:/SuperTag/TraitTag]].
+
+!! Online Tools
 
 * Online free JSONSchema editors
 ** [ext[bjdash/JSON-Schema-Builder|https://bjdash.github.io/JSON-Schema-Builder/]]
@@ -23,7 +25,7 @@ See links above to learn how to write them. You can also learn from some existed
 ** [[wikilabs/field-editor - Side by side multiline field editor|https://tw-cpl.netlify.app/#Plugin_202203243721287]]
 
 
-If you want to customise the form, follow these steps
+!! If you want to customise the form, follow these steps
 
 * Create a new tiddler, it is recommended to prefix it with `$:/TraitTag`, something like `$:/TraitTag/xxx`, followed by the custom English name, but it is fine not to do so.
 * And add the tag `$:/SuperTag/TraitTag`, this is a must.
@@ -68,3 +70,25 @@ The value in properties is of the form `"completed": {"type": "boolean"},` with 
 The content inside can have title, description, type, format, etc.The type types are string, number, array, object, boolean, integer and integer. The number and integer types can have maximum and minimum value controls. At the same level as type in the properties field name is format, which can be `color` colour, `date` date value, `email` email format, etc. The combination of type and format allows for most form functionality. This can be learnt from the [[JSON Schema|https://json-schema.org/]] documentation or from the [[TraitTag Examples|$:/SuperTag/TraitTag]] examples. Normally JSON schema can nest data, but because of the Tiddlywiki there is no field levels that can be nested, so the format of nested data is not covered either.
 
 The schema saves data in json format and the format is very strict, writing a wrong comma, missing a comma or writing a wrong semicolon or missing a semicolon will result in errors and will not display properly. You can edit it better with the help of the following URL or open it in a code editor such as VS Code, as there will be automatic checking and automatic formatting that will give a good indication of the problem.
+
+!! Translation
+
+Referring to [[$:/TraitTag/Color]], you can add the `lingo-base` field to the top level of the specification, e.g. `"lingo-base": "language/",`:
+
+<$codeblock code={{$:/TraitTag/Color!!schema}} />
+
+The usage is similar to that of the official Tiddlywiki `lingo` macro. This way, you can use translations in your trait tags.
+
+In the example above, the actual translation tiddler used looks like this:
+
+# `lingo-base` value
+#* aka `language/`
+# followed by the current language
+#* For example, `en-GB/`.
+# And then the contents of the field.
+#* such as the field `"title": "TraitTag/Color/Title",` whose value
+#* would be `TraitTag/Color/Title`.
+
+And you end up with the translation tiddler [[language/en-GB/TraitTag/Color/Title]], Its content is
+
+<$codeblock code={{language/en-GB/TraitTag/Color/Title}} />
