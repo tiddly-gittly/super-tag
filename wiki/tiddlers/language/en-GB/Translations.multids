@@ -8,3 +8,7 @@ TraitTag/Color/Description: Theme color of tiddler, used when this tiddler works
 TraitTag/ActionState/Delay: Delay
 TraitTag/ActionState/InAdvance: InAdvance
 TraitTag/ActionState/AtTime: AtTime
+TraitTag/ActionState/CompleteType/Title: Complete Type
+TraitTag/ActionState/CompleteType/Description: Whether the task was completed on time or not.
+TraitTag/ActionState/Completed/Title: Completion Status
+TraitTag/ActionState/Completed/Description: Whether or not the task was completed.

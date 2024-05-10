@@ -8,3 +8,7 @@ TraitTag/Color/Description: 设置条目的主题色，用于此条目作为标�
 TraitTag/ActionState/Delay: 延迟
 TraitTag/ActionState/InAdvance: 提前
 TraitTag/ActionState/AtTime: 准时
+TraitTag/ActionState/CompleteType/Title: 完成类型
+TraitTag/ActionState/CompleteType/Description: 任务是否准时完成
+TraitTag/ActionState/Completed/Title: 完成情况
+TraitTag/ActionState/Completed/Description: 任务是否已完成

@@ -4,11 +4,11 @@
         "text": "Describe action like task's complete state.",
         "creator": "林一二",
         "title": "$:/TraitTag/ActionState",
-        "modified": "20240510174853560",
+        "modified": "20240510175506854",
         "modifier": "林一二",
         "tags": "$:/SuperTag/TraitTag",
         "type": "text/vnd.tiddlywiki",
-        "schema": "{\n  \"type\": \"object\",\n  \"lingo-base\": \"language/\",\n  \"properties\": {\n    \"completed\": {\n      \"type\": \"boolean\"\n    },\n    \"completeType\": {\n      \"type\": \"string\",\n      \"enum\": [\"Delay\", \"AtTime\", \"InAdvance\"],\n      \"options\": {\n        \"enum_titles\": [\n          \"TraitTag/ActionState/Delay\",\n          \"TraitTag/ActionState/AtTime\",\n          \"TraitTag/ActionState/InAdvance\"\n        ]\n      }\n    },\n    \"completedCount\": {\n      \"type\": \"number\"\n    }\n  },\n  \"required\": [\"completed\"]\n}\n",
+        "schema": "{\n  \"type\": \"object\",\n  \"lingo-base\": \"language/\",\n  \"properties\": {\n    \"completed\": {\n      \"type\": \"boolean\",\n      \"title\": \"TraitTag/ActionState/Completed/Title\",\n      \"description\": \"TraitTag/ActionState/Completed/Description\"\n    },\n    \"completeType\": {\n      \"type\": \"string\",\n      \"title\": \"TraitTag/ActionState/CompleteType/Title\",\n      \"description\": \"TraitTag/ActionState/CompleteType/Description\",\n      \"enum\": [\"Delay\", \"AtTime\", \"InAdvance\"],\n      \"options\": {\n        \"enum_titles\": [\n          \"TraitTag/ActionState/Delay\",\n          \"TraitTag/ActionState/AtTime\",\n          \"TraitTag/ActionState/InAdvance\"\n        ]\n      }\n    },\n    \"completedCount\": {\n      \"type\": \"number\"\n    }\n  },\n  \"required\": [\"completed\"]\n}\n",
         "wl-field-name-text": "schema"
     }
 ]
