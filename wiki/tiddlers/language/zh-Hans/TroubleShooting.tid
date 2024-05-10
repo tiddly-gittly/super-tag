@@ -1,0 +1,25 @@
+title: language/zh-Hans/TroubleShooting
+
+! 问题排查
+
+!! 配置项只部分生效，或完全没生效
+
+此类问题，可以将配置内容复制出来，放到 https://stackblitz.com/ 之类的在线 JS 编辑器里，或电脑上的 VSCode 里，检查语法有没有问题。
+
+!!! 可能是 JS 语法错误，例如某行结尾忘加逗号
+
+错误的
+
+```js
+      "enum": ["Delay", "AtTime", "InAdvance"]
+      "options": {
+```
+
+正确的，补上了结尾的逗号
+
+```js
+      "enum": ["Delay", "AtTime", "InAdvance"],
+      "options": {
+```
+
+在上例里，开发者通过复制黏贴的方式添加了 `options` 字段，但忘记了在前一个字段 `enum` 字段的结尾补加逗号，导致了整个配置项的失效。

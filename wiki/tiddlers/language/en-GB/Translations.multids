@@ -5,3 +5,6 @@ Caption/TraitTagDeveloperCreateTraitTag: TraitTag developer - create TraitTag
 Caption/AdvancedUserUseTraitTagCreateSuperTag: Advanced user - use TraitTag create SuperTag
 TraitTag/Color/Title: Color
 TraitTag/Color/Description: Theme color of tiddler, used when this tiddler works as tag, etc.
+TraitTag/ActionState/Delay: Delay
+TraitTag/ActionState/InAdvance: InAdvance
+TraitTag/ActionState/AtTime: AtTime

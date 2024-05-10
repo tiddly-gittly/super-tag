@@ -1,14 +1,14 @@
 [
     {
         "created": "20230218102115483",
-        "creator": "林一二",
         "text": "Describe action like task's complete state.",
+        "creator": "林一二",
         "title": "$:/TraitTag/ActionState",
-        "modified": "20230219063009765",
+        "modified": "20240510174853560",
         "modifier": "林一二",
         "tags": "$:/SuperTag/TraitTag",
         "type": "text/vnd.tiddlywiki",
-        "schema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"completed\": {\n      \"type\": \"boolean\"\n    },\n    \"completeType\": {\n      \"type\": \"string\",\n      \"enum\": [\"Delay\", \"AtTime\", \"InAdvance\"]\n    },\n    \"completedCount\": {\n      \"type\": \"number\"\n    }\n  },\n  \"required\": [\"completed\"]\n}\n",
+        "schema": "{\n  \"type\": \"object\",\n  \"lingo-base\": \"language/\",\n  \"properties\": {\n    \"completed\": {\n      \"type\": \"boolean\"\n    },\n    \"completeType\": {\n      \"type\": \"string\",\n      \"enum\": [\"Delay\", \"AtTime\", \"InAdvance\"],\n      \"options\": {\n        \"enum_titles\": [\n          \"TraitTag/ActionState/Delay\",\n          \"TraitTag/ActionState/AtTime\",\n          \"TraitTag/ActionState/InAdvance\"\n        ]\n      }\n    },\n    \"completedCount\": {\n      \"type\": \"number\"\n    }\n  },\n  \"required\": [\"completed\"]\n}\n",
         "wl-field-name-text": "schema"
     }
 ]

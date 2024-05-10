@@ -1,0 +1,26 @@
+title: language/en-GB/TroubleShooting
+
+! Troubleshooting
+
+!! Configurations are only partially working, or not working at all.
+
+For this kind of problem, you can copy the configuration and put it into an online JS editor like https://stackblitz.com/ or VSCode on your computer to check the syntax.
+
+!!! It could be a JS syntax error, such as forgetting to put a tailing comma at the end of a line
+
+Wrong
+
+
+```js
+      "enum": ["Delay", "AtTime", "InAdvance"]
+      "options": {
+```
+
+Correct, added the tailing comma
+
+```js
+      "enum": ["Delay", "AtTime", "InAdvance"],
+      "options": {
+```
+
+In the above example, the developer added the `options` field by copying and pasting, but forgot to add a comma at the end of the previous field, `enum`, which invalidated the entire configuration item.

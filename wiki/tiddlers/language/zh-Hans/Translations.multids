@@ -5,3 +5,6 @@ Caption/TraitTagDeveloperCreateTraitTag: 特质标签开发者：创建特质标
 Caption/AdvancedUserUseTraitTagCreateSuperTag: 高级用户：使用特质标签创建超级标签
 TraitTag/Color/Title: 颜色
 TraitTag/Color/Description: 设置条目的主题色，用于此条目作为标签时的颜色等
+TraitTag/ActionState/Delay: 延迟
+TraitTag/ActionState/InAdvance: 提前
+TraitTag/ActionState/AtTime: 准时
