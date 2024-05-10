@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@json-editor/json-editor':
-        specifier: 2.15.0
-        version: 2.15.0
+        specifier: 2.14.1
+        version: 2.14.1
       esbuild-sass-plugin:
         specifier: ^3.2.0
         version: 3.2.0(esbuild@0.20.1)(sass-embedded@1.71.1)
@@ -348,8 +348,8 @@ packages:
   '@jridgewell/trace-mapping@0.3.17':
     resolution: {integrity: sha512-MCNzAp77qzKca9+W/+I0+sEpaUnZoeasnghNeVc41VZCEKaCH73Vq3BZZ/SzWIgrqE4H4ceI+p+b6C0mHf9T4g==}
 
-  '@json-editor/json-editor@2.15.0':
-    resolution: {integrity: sha512-Q96u4xEVQnoexbxOT9DcepmB6pgAfWeaEt7HetyObuBKVSRZjrv5Onoz6kZIUis4oEujBMyIKO5m4wtBhW3EeQ==}
+  '@json-editor/json-editor@2.14.1':
+    resolution: {integrity: sha512-Q6ACH6bHYtOCtM8AElkwzLYlTt9wzwzea2+ju40cl+s2IH0nM2r9nq3EX9jxSO9/oWJstJLnyuV95vomtSZYqw==}
     engines: {node: '>= 0.8.0'}
 
   '@kwsites/file-exists@1.1.1':
@@ -3547,7 +3547,7 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.0
       '@jridgewell/sourcemap-codec': 1.4.14
 
-  '@json-editor/json-editor@2.15.0':
+  '@json-editor/json-editor@2.14.1':
     dependencies:
       core-js: 3.28.0
 

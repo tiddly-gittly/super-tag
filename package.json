@@ -34,7 +34,7 @@
     ]
   },
   "dependencies": {
-    "@json-editor/json-editor": "2.15.0",
+    "@json-editor/json-editor": "2.14.1",
     "esbuild-sass-plugin": "^3.2.0",
     "npm-check-updates": "^16.14.20",
     "spectre.css": "^0.5.9",
