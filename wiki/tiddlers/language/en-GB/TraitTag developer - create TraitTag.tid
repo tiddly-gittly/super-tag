@@ -73,6 +73,8 @@ The schema saves data in json format and the format is very strict, writing a wr
 
 !! Translation
 
+!!! Translate field titles, descriptions, etc.
+
 Referring to [[$:/TraitTag/Color]], you can add the `lingo-base` field to the top level of the specification, e.g. `"lingo-base": "language/",`:
 
 <$codeblock code={{$:/TraitTag/Color!!schema}} />
@@ -92,3 +94,15 @@ In the example above, the actual translation tiddler used looks like this:
 And you end up with the translation tiddler [[language/en-GB/TraitTag/Color/Title]], Its content is
 
 <$codeblock code={{language/en-GB/TraitTag/Color/Title}} />
+
+!!! Translating values of enumerated type fields
+
+If you have enumeration type fields in your specification, such as the `completeType` field in [[$:/TraitTag/ActionState]]:
+
+<$codeblock code={{$:/TraitTag/ActionState!!schema}} />
+
+You can add the `options` field, and then add the `enum_titles` field, where the values of `enum_titles` are an array, and each value in the array corresponds to each value in `enum`. The values in the array are part of the name of the translated tiddler, e.g. `TraitTag/ActionState/Delay`.
+
+As above, you end up with a tiddler [[language/en-GB/TraitTag/ActionState/Delay]], which looks like this
+
+<$codeblock code={{language/en-GB/TraitTag/ActionState/Delay}} />

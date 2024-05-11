@@ -72,6 +72,8 @@ JSON 规格自身也是以 JSON 格式保存的数据，格式非常严格，写
 
 !! 翻译内容
 
+!!! 翻译字段标题和描述等
+
 参考[[$:/TraitTag/Color]]，你可以在规格的顶层加上 `lingo-base` 字段，例如 `"lingo-base": "language/",`：
 
 <$codeblock code={{$:/TraitTag/Color!!schema}} />
@@ -91,3 +93,15 @@ JSON 规格自身也是以 JSON 格式保存的数据，格式非常严格，写
 最终得到 [[language/zh-Hans/TraitTag/Color/Title]] 这个翻译条目，其内容为
 
 <$codeblock code={{language/zh-Hans/TraitTag/Color/Title}} />
+
+!!! 翻译枚举类型字段的值
+
+如果你的规格里有枚举类型的字段，例如 [[$:/TraitTag/ActionState]] 里的 `completeType` 字段：
+
+<$codeblock code={{$:/TraitTag/ActionState!!schema}} />
+
+你可以添加 `options` 字段，然后加上 `enum_titles` 字段，`enum_titles` 的值为一个数组，数组里的每个值对应 `enum` 里的每个值。数组里的值就是翻译条目的名称的一部分，例如 `TraitTag/ActionState/Delay`。
+
+同上，最终会拼接得到 [[language/zh-Hans/TraitTag/ActionState/Delay]] 这个翻译条目，其内容为
+
+<$codeblock code={{language/zh-Hans/TraitTag/ActionState/Delay}} />
