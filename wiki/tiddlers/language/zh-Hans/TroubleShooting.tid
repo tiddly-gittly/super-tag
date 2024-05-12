@@ -4,7 +4,7 @@ title: language/zh-Hans/TroubleShooting
 
 !! 配置项只部分生效，或完全没生效
 
-此类问题，可以将配置内容复制出来，放到 https://stackblitz.com/ 之类的在线 JS 编辑器里，或电脑上的 VSCode 里，检查语法有没有问题。
+此类问题，可以将配置内容复制出来，放到 https://jsoneditoronline.org/ https://stackblitz.com/ 之类的在线 JS 编辑器里，或电脑上的 VSCode 里，检查语法有没有问题。
 
 !!! 可能是 JS 语法错误，例如某行结尾忘加逗号
 
