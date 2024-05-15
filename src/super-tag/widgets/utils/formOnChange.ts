@@ -26,6 +26,11 @@ export function formOnChange(currentTiddlerTitle?: string, editor?: JSONEditor.J
         tiddlerFields = tiddlerFieldsWithoutKey;
         delete latestFormValue[key];
       }
+      // if it was empty, and user add a new property, close the dialog
+      if (tiddlerFields[key] === undefined && key in latestFormValue) {
+        // based on `form_name_root`
+        editor.editors.SuperTag.hideAddProperty();
+      }
     }
   });
   if (hasChange) {

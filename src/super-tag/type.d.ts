@@ -10,6 +10,7 @@ declare module '$:/plugins/linonetwo/super-tag/utils/initEditor.js' {
 
 declare module '@json-editor/json-editor' {
   // copy from https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/json-editor/index.d.ts
+  // add `hideAddProperty`
 
   interface JSONEditorOptions<TValue> {
     /**
@@ -162,6 +163,12 @@ declare module '@json-editor/json-editor' {
       options: JSONEditorOptions<any>;
       resolvers: Array<(schema: any) => string>;
     };
+
+    editors: {
+      SuperTag: {
+        hideAddProperty(): void;
+      }
+    }
 
     public static plugins: {
       ace: {
