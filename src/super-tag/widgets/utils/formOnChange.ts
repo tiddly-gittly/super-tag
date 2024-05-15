@@ -8,10 +8,17 @@ export function formOnChange(currentTiddlerTitle?: string, editor?: JSONEditor.J
   }
   // Get an array of errors from the validator
   const errors = editor.validate();
+  // DEBUG: console errors
+  console.log(`errors`, errors);
   if (errors.length > 0) {
     if (errorValidatorInfoElement !== undefined) {
       errorValidatorInfoElement.className = 'label label-warning';
-      errorValidatorInfoElement.textContent = 'Form not valid';
+      errorValidatorInfoElement.textContent = `Form not valid (${errors.map((error) => error.message).join(', ')})`;
+    }
+  } else {
+    if (errorValidatorInfoElement !== undefined) {
+      errorValidatorInfoElement.className = 'label';
+      errorValidatorInfoElement.textContent = '';
     }
   }
   let tiddlerFields = $tw.wiki.getTiddler(currentTiddlerTitle)?.fields ?? ({} as Record<string, unknown>);
