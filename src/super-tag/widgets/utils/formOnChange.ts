@@ -28,7 +28,7 @@ export function formOnChange(currentTiddlerTitle?: string, editor?: JSONEditor.J
     if (tiddlerFields[key] !== latestFormValue[key]) {
       hasChange = true;
       // if user delete the value from the form, also delete the field.
-      if (tiddlerFields[key] !== undefined && !latestFormValue[key]) {
+      if (tiddlerFields[key] !== undefined && latestFormValue[key] === '') {
         const { [key]: _, ...tiddlerFieldsWithoutKey } = tiddlerFields;
         tiddlerFields = tiddlerFieldsWithoutKey;
         delete latestFormValue[key];
