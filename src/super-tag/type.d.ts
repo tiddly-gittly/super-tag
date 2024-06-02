@@ -157,6 +157,7 @@ declare module '@json-editor/json-editor' {
         object: {
           options: JSONEditorObjectOptions;
         };
+        datetime: any
       };
       language: string;
       languages: any;
@@ -197,5 +198,6 @@ declare module '@json-editor/json-editor' {
     public enable(): void;
     public isEnabled(): boolean;
     public destroy(): void;
+    validator: Record<string, CallableFunction>;
   }
 }
