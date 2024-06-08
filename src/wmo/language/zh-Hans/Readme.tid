@@ -1,0 +1,19 @@
+title: $:/plugins/linonetwo/wmo/language/zh-Hans/Readme
+
+\procedure lingo-base() $:/plugins/linonetwo/wmo/language/
+
+! <<lingo Name>>
+
+<<lingo Description>>
+
+!! 介绍
+
+在安装了「超级标签」插件（即 SuperTag 插件）后，可以展开下面的表单查看详情：
+
+!!! 标准（所有知识库通用）
+
+<$json-editor-form filter="[[$:/TraitTag/WMO/Standard]get[schema]]" tiddler="$:/temp/WMO-example" />
+
+!!! 核心（TW5官网使用的）
+
+<$json-editor-form filter="[[$:/TraitTag/WMO/Core]get[schema]]" tiddler="$:/temp/WMO-example" />

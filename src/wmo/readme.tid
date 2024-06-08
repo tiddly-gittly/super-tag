@@ -1,0 +1,6 @@
+title: $:/plugins/linonetwo/wmo/readme
+type: text/vnd.tiddlywiki
+
+\procedure lingo-base() $:/plugins/linonetwo/wmo/language/
+
+<<lingo Readme>>

@@ -1,0 +1,4 @@
+title: $:/plugins/linonetwo/wmo/language/zh-Hans/
+
+Name: 太微通用本体
+Description: 太微通用的/有共识的元数据本体。翻译了 `title` `caption` `modified` 等字段。

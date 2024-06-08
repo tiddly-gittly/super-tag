@@ -1,0 +1,63 @@
+title: $:/plugins/linonetwo/wmo/language/en-GB/
+
+TraitTag/WMO/Standard/Title/Title: Title
+TraitTag/WMO/Standard/Title/Description: The unique name of a tiddler
+TraitTag/WMO/Standard/Text/Title: Text
+TraitTag/WMO/Standard/Text/Description: The body text of a tiddler
+TraitTag/WMO/Standard/Modified/Title: Modified
+TraitTag/WMO/Standard/Modified/Description: The date and time at which a tiddler was last modified
+TraitTag/WMO/Standard/Modifier/Title: Modifier
+TraitTag/WMO/Standard/Modifier/Description: The tiddler title associated with the person who last modified a tiddler
+TraitTag/WMO/Standard/Created/Title: Created
+TraitTag/WMO/Standard/Created/Description: The date a tiddler was created
+TraitTag/WMO/Standard/Creator/Title: Creator
+TraitTag/WMO/Standard/Creator/Description: The name of the person who created a tiddler
+TraitTag/WMO/Standard/Tags/Title: Tags
+TraitTag/WMO/Standard/Tags/Description: A list of tags associated with a tiddler
+TraitTag/WMO/Standard/Type/Title: Type
+TraitTag/WMO/Standard/Type/Description: The content type of a tiddler
+TraitTag/WMO/Standard/List/Title: List
+TraitTag/WMO/Standard/List/Description: An ordered list of tiddler titles associated with a tiddler – see ListField
+TraitTag/WMO/Standard/Caption/Title: Caption
+TraitTag/WMO/Standard/Caption/Description: The text to be displayed on a tab or button
+
+TraitTag/WMO/Core/Class/Title: Class
+TraitTag/WMO/Core/Class/Description: 
+TraitTag/WMO/Core/CodeBody/Title: Code Body
+TraitTag/WMO/Core/CodeBody/Description: Introduced in v5.2.1 The view template will display the tiddler as code if set to yes
+TraitTag/WMO/Core/Color/Title: Color
+TraitTag/WMO/Core/Color/Description: The CSS color value associated with a tiddler
+TraitTag/WMO/Core/Description/Title: Description
+TraitTag/WMO/Core/Description/Description: The descriptive text for a plugin, or a modal dialogue
+TraitTag/WMO/Core/DraftOf/Title: Draft Of
+TraitTag/WMO/Core/DraftOf/Description: For draft tiddlers, contains the title of the tiddler of which this is a draft
+TraitTag/WMO/Core/DraftTitle/Title: Draft Title
+TraitTag/WMO/Core/DraftTitle/Description: For draft tiddlers, contains the proposed new title of the tiddler
+TraitTag/WMO/Core/Footer/Title: Footer
+TraitTag/WMO/Core/Footer/Description: The footer text for a modal
+TraitTag/WMO/Core/HideBody/Title: Hide Body
+TraitTag/WMO/Core/HideBody/Description: The view template will hide bodies of tiddlers if set to yes
+TraitTag/WMO/Core/Icon/Title: Icon
+TraitTag/WMO/Core/Icon/Description: The title of the tiddler containing the icon associated with a tiddler
+TraitTag/WMO/Core/Library/Title: Library
+TraitTag/WMO/Core/Library/Description: Indicates that a tiddler should be saved as a JavaScript library if set to yes
+TraitTag/WMO/Core/ListAfter/Title: List After
+TraitTag/WMO/Core/ListAfter/Description: If set, the title of the tiddler after which this tiddler should be added to the ordered list of tiddler titles, or at the end of the list if this field is present but empty
+TraitTag/WMO/Core/ListBefore/Title: List Before
+TraitTag/WMO/Core/ListBefore/Description: If set, the title of a tiddler before which this tiddler should be added to the ordered list of tiddler titles, or at the start of the list if this field is present but empty
+TraitTag/WMO/Core/Name/Title: Name
+TraitTag/WMO/Core/Name/Description: The human readable name associated with a plugin tiddler
+TraitTag/WMO/Core/PluginPriority/Title: Plugin Priority
+TraitTag/WMO/Core/PluginPriority/Description: A numerical value indicating the priority of a plugin tiddler
+TraitTag/WMO/Core/PluginType/Title: Plugin Type
+TraitTag/WMO/Core/PluginType/Description: The type of plugin in a plugin tiddler
+TraitTag/WMO/Core/Source/Title: Source
+TraitTag/WMO/Core/Source/Description: The source URL associated with a tiddler
+TraitTag/WMO/Core/Subtitle/Title: Subtitle
+TraitTag/WMO/Core/Subtitle/Description: The subtitle text for a modal
+TraitTag/WMO/Core/ThrottleRefresh/Title: Throttle Refresh
+TraitTag/WMO/Core/ThrottleRefresh/Description: If present, throttles refreshes of this tiddler
+TraitTag/WMO/Core/TocLink/Title: Toc Link
+TraitTag/WMO/Core/TocLink/Description: Suppresses the tiddler's link in a Table of Contents tree if set to no
+TraitTag/WMO/Core/CanonicalUri/Title: Canonical URI
+TraitTag/WMO/Core/CanonicalUri/Description: The full URI of an external image tiddler

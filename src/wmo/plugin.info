@@ -1,0 +1,9 @@
+{
+  "title": "$:/plugins/linonetwo/wmo",
+  "name": "wmo",
+  "author": "linonetwo",
+  "description": "TiddlyWiki Common/Consensus Metadata Ontology. I18n for fields like `title` `caption` `modified`.",
+  "plugin-type": "plugin",
+  "version": "0.0.1",
+  "list": "readme"
+}

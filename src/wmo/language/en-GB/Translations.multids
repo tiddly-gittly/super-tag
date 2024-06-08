@@ -1,0 +1,4 @@
+title: $:/plugins/linonetwo/wmo/language/en-GB/
+
+Name: TiddlyWiki Common Ontology
+Description: TiddlyWiki Common/Consensus Metadata Ontology. I18n for fields like `title` `caption` `modified`.

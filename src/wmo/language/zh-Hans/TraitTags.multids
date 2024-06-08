@@ -1,0 +1,65 @@
+title: $:/plugins/linonetwo/wmo/language/zh-Hans/
+
+TraitTag/WMO/Standard/Title/Title: 标题
+TraitTag/WMO/Standard/Title/Description: 条目的唯一名称
+TraitTag/WMO/Standard/Text/Title: 文本
+TraitTag/WMO/Standard/Text/Description: 条目的内文
+TraitTag/WMO/Standard/Modified/Title: 修改日期
+TraitTag/WMO/Standard/Modified/Description: 条目的最近修改日期与时间
+TraitTag/WMO/Standard/Modifier/Title: 修改者
+TraitTag/WMO/Standard/Modifier/Description: 条目的最近修改者
+TraitTag/WMO/Standard/Created/Title: 创建日期
+TraitTag/WMO/Standard/Created/Description: 条目的创建日期
+TraitTag/WMO/Standard/Creator/Title: 创建者
+TraitTag/WMO/Standard/Creator/Description: 条目的创建者
+TraitTag/WMO/Standard/Tags/Title: 标签
+TraitTag/WMO/Standard/Tags/Description: 条目的标签清单
+TraitTag/WMO/Standard/Type/Title: 类型
+TraitTag/WMO/Standard/Type/Description: 条目的内容类型
+TraitTag/WMO/Standard/List/Title: 列表
+TraitTag/WMO/Standard/List/Description: 条目的列表，指定一些条目的标题清单 – 详见 ListField
+TraitTag/WMO/Standard/Caption/Title: 标题文字
+TraitTag/WMO/Standard/Caption/Description: 显示于页签或按钮上的标题文字
+
+TraitTag/WMO/Core/Class/Title: CSS类
+TraitTag/WMO/Core/Class/Description: 5.1.16 版引进 渲染条目时，套用到条目的 CSS 类 - 请参阅依自订类别的自订样式。也适用于互动窗口
+TraitTag/WMO/Core/CodeBody/Title: 代码体
+TraitTag/WMO/Core/CodeBody/Description: 5.2.1 版引进 若设置为 yes，视图模板将以程式码形式显示条目
+TraitTag/WMO/Core/Color/Title: 颜色
+TraitTag/WMO/Core/Color/Description: 条目的 CSS 颜色值
+TraitTag/WMO/Core/Description/Title: 描述
+TraitTag/WMO/Core/Description/Description: 插件的说明、描述
+TraitTag/WMO/Core/DraftOf/Title: 草稿条目
+TraitTag/WMO/Core/DraftOf/Description: 草稿条目，包含条目的标题、标签、字段 ...
+TraitTag/WMO/Core/DraftTitle/Title: 草稿标题
+TraitTag/WMO/Core/DraftTitle/Description: 草稿条目的标题
+TraitTag/WMO/Core/Footer/Title: 注脚
+TraitTag/WMO/Core/Footer/Description: 互动窗口的注脚
+TraitTag/WMO/Core/HideBody/Title: 隐藏主体
+TraitTag/WMO/Core/HideBody/Description: 若设置为 yes，视图模板将隐藏条目的主体
+TraitTag/WMO/Core/Icon/Title: 图标
+TraitTag/WMO/Core/Icon/Description: 条目的标题含有与条目关联的图标
+TraitTag/WMO/Core/Library/Title: 库
+TraitTag/WMO/Core/Library/Description: 若设置为 yes，表示条目应该被保存为一个 JavaScript 程序库
+TraitTag/WMO/Core/ListAfter/Title: 列表后
+TraitTag/WMO/Core/ListAfter/Description: 当前条目名称将被添加到条目排序清单的设置条目名称之后，或若此字段存在但是空的，则被添加于清单的尾端
+TraitTag/WMO/Core/ListBefore/Title: 列表前
+TraitTag/WMO/Core/ListBefore/Description: 前条目名称将被添加到条目排序清单中的设置条目名称之前，或若此字段存在但是空的，则被添加于清单的前端
+TraitTag/WMO/Core/Name/Title: 名称
+TraitTag/WMO/Core/Name/Description: 具可读性的插件条目的名称
+TraitTag/WMO/Core/PluginPriority/Title: 插件优先级
+TraitTag/WMO/Core/PluginPriority/Description: 插件条目的优先级数值
+TraitTag/WMO/Core/PluginType/Title: 插件类型
+TraitTag/WMO/Core/PluginType/Description: 插件条目的类型
+TraitTag/WMO/Core/Stability/Title: 稳定性
+TraitTag/WMO/Core/Stability/Description: 插件的开发状态：已弃用、实验性、稳定或旧版
+TraitTag/WMO/Core/Source/Title: 源
+TraitTag/WMO/Core/Source/Description: 条目的网址
+TraitTag/WMO/Core/Subtitle/Title: 副标题
+TraitTag/WMO/Core/Subtitle/Description: 互动窗口的副标题
+TraitTag/WMO/Core/ThrottleRefresh/Title: 限制刷新
+TraitTag/WMO/Core/ThrottleRefresh/Description: 如果存在，则限制此条目的刷新
+TraitTag/WMO/Core/TocLink/Title: 目录链接
+TraitTag/WMO/Core/TocLink/Description: 若设置为 no，则抑制目录树中的条目链接。
+TraitTag/WMO/Core/CanonicalUri/Title: 规范 URI
+TraitTag/WMO/Core/CanonicalUri/Description: 外部图像条目的完整的 URI

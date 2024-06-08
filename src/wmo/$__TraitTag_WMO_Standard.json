@@ -1,0 +1,13 @@
+[
+    {
+        "created": "20240608173327437",
+        "text": "Standard tiddlywiki fields.",
+        "title": "$:/TraitTag/WMO/Standard",
+        "tags": "$:/SuperTag/TraitTag",
+        "type": "text/vnd.tiddlywiki",
+        "modified": "20240608174008307",
+        "url": "https://tiddlywiki.com/#TiddlerFields",
+        "schema": "{\n  \"type\": \"object\",\n  \"lingo-base\": \"$:/plugins/linonetwo/wmo/language/\",\n  \"properties\": {\n    \"title\": {\n      \"type\": \"string\",\n      \"title\": \"TraitTag/WMO/Standard/Title/Title\",\n      \"description\": \"TraitTag/WMO/Standard/Title/Description\"\n    },\n    \"text\": {\n      \"type\": \"string\",\n      \"title\": \"TraitTag/WMO/Standard/Text/Title\",\n      \"description\": \"TraitTag/WMO/Standard/Text/Description\"\n    },\n    \"modified\": {\n      \"type\": \"string\",\n      \"title\": \"TraitTag/WMO/Standard/Modified/Title\",\n      \"description\": \"TraitTag/WMO/Standard/Modified/Description\",\n      \"format\":  \"datetime-local\"\n    },\n    \"modifier\": {\n      \"type\": \"string\",\n      \"title\": \"TraitTag/WMO/Standard/Modifier/Title\",\n      \"description\": \"TraitTag/WMO/Standard/Modifier/Description\"\n    },\n    \"created\": {\n      \"type\": \"string\",\n      \"title\": \"TraitTag/WMO/Standard/Created/Title\",\n      \"description\": \"TraitTag/WMO/Standard/Created/Description\",\n      \"format\":  \"datetime-local\"\n    },\n    \"creator\": {\n      \"type\": \"string\",\n      \"title\": \"TraitTag/WMO/Standard/Creator/Title\",\n      \"description\": \"TraitTag/WMO/Standard/Creator/Description\"\n    },\n    \"tags\": {\n      \"type\": \"string\",\n      \"title\": \"TraitTag/WMO/Standard/Tags/Title\",\n      \"description\": \"TraitTag/WMO/Standard/Tags/Description\"\n    },\n    \"type\": {\n      \"type\": \"string\",\n      \"title\": \"TraitTag/WMO/Standard/Type/Title\",\n      \"description\": \"TraitTag/WMO/Standard/Type/Description\"\n    },\n    \"list\": {\n      \"type\": \"string\",\n      \"title\": \"TraitTag/WMO/Standard/List/Title\",\n      \"description\": \"TraitTag/WMO/Standard/List/Description\"\n    },\n    \"caption\": {\n      \"type\": \"string\",\n      \"title\": \"TraitTag/WMO/Standard/Caption/Title\",\n      \"description\": \"TraitTag/WMO/Standard/Caption/Description\"\n    }\n  }\n}",
+        "wl-field-name-text": "schema"
+    }
+]
