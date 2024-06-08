@@ -6,6 +6,8 @@ title: $:/plugins/linonetwo/wmo/language/zh-Hans/Readme
 
 <<lingo Description>>
 
+配合超级标签插件使用，或为动态表格插件提供太微字段的翻译。
+
 !! 介绍
 
 在安装了「超级标签」插件（即 SuperTag 插件）后，可以展开下面的表单查看详情：

@@ -6,6 +6,8 @@ title: $:/plugins/linonetwo/wmo/language/en-GB/Readme
 
 <<lingo Description>>
 
+Used in conjunction with the Super Tags plugin, or to provide translations of Tiddlywiki fields for the Dynamic Forms plugin.
+
 !! Presentation
 
 After installing the "SuperTag" plugin, you can expand the form below to see the details:
