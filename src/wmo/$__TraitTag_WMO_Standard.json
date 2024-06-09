@@ -1,7 +1,7 @@
 [
     {
         "created": "20240608173327437",
-        "text": "Standard tiddlywiki fields.",
+        "text": "Standard tiddlywiki fields.\n\n<$codeblock code={{!!schema}} />",
         "title": "$:/TraitTag/WMO/Standard",
         "tags": "$:/SuperTag/TraitTag",
         "type": "text/vnd.tiddlywiki",

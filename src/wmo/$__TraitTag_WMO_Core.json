@@ -1,7 +1,7 @@
 [
     {
         "created": "20240608173327437",
-        "text": "Tiddlywiki fields used by the core.",
+        "text": "Tiddlywiki fields used by the core.\n\n<$codeblock code={{!!schema}} />",
         "title": "$:/TraitTag/WMO/Core",
         "tags": "$:/SuperTag/TraitTag",
         "type": "text/vnd.tiddlywiki",

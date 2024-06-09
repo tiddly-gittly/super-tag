@@ -14,8 +14,16 @@ After installing the "SuperTag" plugin, you can expand the form below to see the
 
 !!! Standard (common to all wikis)
 
+[[$:/TraitTag/WMO/Standard]]
+
+Based on {{$:/TraitTag/WMO/Standard!!url}}
+
 <$json-editor-form filter="[[$:/TraitTag/WMO/Standard]get[schema]]" tiddler="$:/temp/WMO-example" />
 
 !!! Core (used by TW5 official website)
+
+[[$:/TraitTag/WMO/Core]]
+
+Based on {{$:/TraitTag/WMO/Standard!!url}}
 
 <$json-editor-form filter="[[$:/TraitTag/WMO/Core]get[schema]]" tiddler="$:/temp/WMO-example" />

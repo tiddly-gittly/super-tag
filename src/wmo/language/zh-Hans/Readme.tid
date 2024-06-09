@@ -14,8 +14,16 @@ title: $:/plugins/linonetwo/wmo/language/zh-Hans/Readme
 
 !!! 标准（所有知识库通用）
 
+[[$:/TraitTag/WMO/Standard]]
+
+基于 {{$:/TraitTag/WMO/Standard!!url}}
+
 <$json-editor-form filter="[[$:/TraitTag/WMO/Standard]get[schema]]" tiddler="$:/temp/WMO-example" />
 
 !!! 核心（TW5官网使用的）
+
+[[$:/TraitTag/WMO/Core]]
+
+基于 {{$:/TraitTag/WMO/Standard!!url}}
 
 <$json-editor-form filter="[[$:/TraitTag/WMO/Core]get[schema]]" tiddler="$:/temp/WMO-example" />
