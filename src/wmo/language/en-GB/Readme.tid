@@ -24,6 +24,6 @@ Based on {{$:/TraitTag/WMO/Standard!!url}}
 
 [[$:/TraitTag/WMO/Core]]
 
-Based on {{$:/TraitTag/WMO/Standard!!url}}
+Based on {{$:/TraitTag/WMO/Core!!url}}
 
 <$json-editor-form filter="[[$:/TraitTag/WMO/Core]get[schema]]" tiddler="$:/temp/WMO-example" />

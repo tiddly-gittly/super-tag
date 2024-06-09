@@ -24,6 +24,6 @@ title: $:/plugins/linonetwo/wmo/language/zh-Hans/Readme
 
 [[$:/TraitTag/WMO/Core]]
 
-基于 {{$:/TraitTag/WMO/Standard!!url}}
+基于 {{$:/TraitTag/WMO/Core!!url}}
 
 <$json-editor-form filter="[[$:/TraitTag/WMO/Core]get[schema]]" tiddler="$:/temp/WMO-example" />
