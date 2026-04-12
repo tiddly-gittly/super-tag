@@ -8,7 +8,7 @@
     "test": "tiddlywiki-plugin-dev test",
     "reset": "rimraf ./**/node_modules",
     "clean": "rimraf dist",
-    "prepare": "husky install",
+    "prepare": "husky",
     "update": "npm-check-updates -u",
     "new": "tiddlywiki-plugin-dev new",
     "build": "npm run clean && tiddlywiki-plugin-dev build",
@@ -39,7 +39,7 @@
     "npm-check-updates": "^20.0.1",
     "spectre.css": "^0.5.9",
     "tiddlywiki": "^5.3.8",
-    "tiddlywiki-plugin-dev": "^0.4.4"
+    "tiddlywiki-plugin-dev": "^0.5.3"
   },
   "devDependencies": {
     "@modern-js/tsconfig": "^3.1.3",
