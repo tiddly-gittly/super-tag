@@ -2,17 +2,159 @@ title: $:/plugins/linonetwo/super-tag/widgets/supertag-form/usePalette.css
 tags: $:/tags/Stylesheet
 type: text/vnd.tiddlywiki
 
-<$importvariables filter="[[$:/themes/tiddlywiki/vanilla/base]]">
+\import [[$:/core/ui/PageMacros]] [all[shadows+tiddlers]tag[$:/tags/Macro]!has[draft.of]]
 
-button.btn.btn-primary {
-  background: <<colour button-background>>;
-  border-color:<<colour button-border>>;
-  color: <<colour button-foreground>>;
+/* Override spectre.css hardcoded primary color with TW palette primary */
+[data-theme="spectre"] .btn {
+  border-color: <<colour primary>>;
+  color: <<colour primary>>;
+  background: <<colour tiddler-background>>;
 }
-button.btn.btn-primary:hover, button.btn.btn-primary:active, button.btn.btn-primary:focus {
-	background-color: <<colour button-background-hover>>;
-  border-color:<<colour button-border>>;
-  color: <<colour button-foreground>>;
+[data-theme="spectre"] .btn:focus,
+[data-theme="spectre"] .btn:hover {
+  background: <<colour tiddler-background>>;
+  border-color: <<colour primary>>;
+  color: <<colour primary>>;
+}
+[data-theme="spectre"] .btn:active,
+[data-theme="spectre"] .btn.active {
+  background: <<colour primary>>;
+  border-color: <<colour primary>>;
+  color: <<colour tiddler-background>>;
+}
+[data-theme="spectre"] .btn.btn-primary {
+  background: <<colour primary>>;
+  border-color: <<colour primary>>;
+  color: <<colour tiddler-background>>;
+}
+[data-theme="spectre"] .btn.btn-primary:focus,
+[data-theme="spectre"] .btn.btn-primary:hover,
+[data-theme="spectre"] .btn.btn-primary:active,
+[data-theme="spectre"] .btn.btn-primary.active {
+  background: <<colour primary>>;
+  border-color: <<colour primary>>;
+  color: <<colour tiddler-background>>;
+  opacity: 0.85;
+}
+[data-theme="spectre"] .btn.btn-link {
+  color: <<colour primary>>;
+}
+[data-theme="spectre"] .btn.btn-link:focus,
+[data-theme="spectre"] .btn.btn-link:hover,
+[data-theme="spectre"] .btn.btn-link:active {
+  color: <<colour primary>>;
+  opacity: 0.85;
 }
 
-</$importvariables>
+/* Override form input colors */
+[data-theme="spectre"] .form-input {
+  background: <<colour tiddler-background>>;
+  border-color: <<colour tiddler-border>>;
+  color: <<colour foreground>>;
+}
+[data-theme="spectre"] .form-input:focus {
+  border-color: <<colour primary>>;
+  box-shadow: none;
+}
+[data-theme="spectre"] .form-input::placeholder {
+  color: <<colour muted-foreground>>;
+}
+[data-theme="spectre"] .form-input-hint {
+  color: <<colour muted-foreground>>;
+}
+[data-theme="spectre"] .form-input:disabled,
+[data-theme="spectre"] .form-input.disabled {
+  background: <<colour tiddler-background>>;
+  opacity: 0.5;
+}
+[data-theme="spectre"] .form-input[readonly] {
+  background: <<colour tiddler-background>>;
+  opacity: 0.7;
+}
+
+/* Override form select colors */
+[data-theme="spectre"] .form-select {
+  background-color: <<colour tiddler-background>>;
+  border-color: <<colour tiddler-border>>;
+  color: <<colour foreground>>;
+}
+/* .form-select:not([multiple]):not([size]) uses background shorthand (svg arrow + white),
+   which overrides background-color. Must re-declare with palette color as background-color part. */
+[data-theme="spectre"] .form-select:not([multiple]):not([size]) {
+  background-color: <<colour tiddler-background>> !important;
+}
+[data-theme="spectre"] .form-select:focus {
+  border-color: <<colour primary>>;
+  box-shadow: none;
+}
+
+/* Override checkbox/radio/switch checked state */
+[data-theme="spectre"] .form-checkbox input:checked + .form-icon,
+[data-theme="spectre"] .form-radio input:checked + .form-icon,
+[data-theme="spectre"] .form-switch input:checked + .form-icon {
+  background: <<colour primary>>;
+  border-color: <<colour primary>>;
+}
+[data-theme="spectre"] .form-checkbox input:focus + .form-icon,
+[data-theme="spectre"] .form-radio input:focus + .form-icon,
+[data-theme="spectre"] .form-switch input:focus + .form-icon {
+  border-color: <<colour primary>>;
+  box-shadow: none;
+}
+[data-theme="spectre"] .form-checkbox input:indeterminate + .form-icon {
+  background: <<colour primary>>;
+  border-color: <<colour primary>>;
+}
+
+/* Override label colors */
+[data-theme="spectre"] .label.label-primary {
+  background: <<colour primary>>;
+  color: <<colour tiddler-background>>;
+}
+[data-theme="spectre"] .label.label-secondary {
+  background: <<colour tiddler-background>>;
+  color: <<colour primary>>;
+}
+
+/* Override general text color */
+[data-theme="spectre"] {
+  color: <<colour foreground>>;
+}
+
+/* Override field row hover background (json-editor spectre theme hardcodes #eee) */
+div[data-theme="spectre"] div[data-schematype]:not([data-schematype="object"]):hover {
+  background-color: <<colour tiddler-editor-background>> !important;
+}
+
+/* Override je-modal (properties dropdown) - not scoped to [data-theme="spectre"] by json-editor */
+.je-modal {
+  background-color: <<colour tiddler-background>> !important;
+  color: <<colour foreground>> !important;
+  border-color: <<colour tiddler-border>> !important;
+  box-shadow: <<colour tiddler-border>> 3px 3px !important;
+}
+.je-modal label,
+.je-modal .form-checkbox,
+.je-modal .form-radio {
+  color: <<colour foreground>>;
+}
+.je-modal .form-checkbox input + .form-icon,
+.je-modal .form-radio input + .form-icon {
+  border-color: <<colour tiddler-border>>;
+  background: <<colour tiddler-background>>;
+}
+
+/* Override je-tab and je-indented-panel */
+[data-theme="spectre"] .je-tab,
+[data-theme="spectre"] .je-tab--top {
+  border-color: <<colour tiddler-border>>;
+  color: <<colour foreground>>;
+  background: <<colour tiddler-background>>;
+}
+[data-theme="spectre"] .je-indented-panel {
+  border-left-color: <<colour tiddler-border>>;
+}
+[data-theme="spectre"] .je-border,
+[data-theme="spectre"] .je-table-border td {
+  border-color: <<colour tiddler-border>> !important;
+}
